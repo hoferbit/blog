@@ -9,16 +9,16 @@ keywords: Tool
 ---
 
 # Preferences
-fonts  
+## fonts  
 `Appearance & Behavior` - `Appearance` - `Use custom font`  
-`LXGW Wenkai Mono 16`  
+LXGW Wenkai Mono 16  
 
 `Editor` - `Font` - `Font`  
-`LXGW Wenkai Mono 18`  
+LXGW Wenkai Mono 18  
 
 `Editor` - `Color Scheme` - `Console Font`  
 `Use console font instead of the default`
 
-whitespace  
+## whitespace  
 `Editor` - `General` - `Appearance`  
 `Show whitespaces`  
