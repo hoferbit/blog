@@ -18,3 +18,7 @@ fonts
 
 `Editor` - `Color Scheme` - `Console Font`  
 `Use console font instead of the default`
+
+whitespace  
+`Editor` - `General` - `Appearance`  
+`Show whitespaces`  
