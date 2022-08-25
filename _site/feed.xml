@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-16T18:48:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">编程随想｜扫盲 HTTPS 和 SSL/TLS 协议</title><link href="http://localhost:4000/https-program-think/" rel="alternate" type="text/html" title="编程随想｜扫盲 HTTPS 和 SSL/TLS 协议" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://localhost:4000/https-program-think</id><content type="html" xml:base="http://localhost:4000/https-program-think/">&lt;p&gt;原文链接 &lt;a href=&quot;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&quot;&gt;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;引子&quot;&gt;引子&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/H_exzSD20W99qSJhGkLJFPwj3gU7VF_t9VGsbHS19Zkky6Vgrhcn8OG4c3--8-qr3DjL-H6lOQVfYcYEZ5qQp19yOycAvaL-Dnl29AqINsIhWK6ITliRP_tBL4nZ4z_Vw0IO&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今天这篇算是补之前的欠债——俺在4年前写过几篇关于 CA 证书的扫盲（“&lt;a href=&quot;https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html&quot;&gt;这里&lt;/a&gt;”和“&lt;a href=&quot;https://program-think.blogspot.com/2010/02/remove-cnnic-cert.html&quot;&gt;这里&lt;/a&gt;”），之后有不止一位热心读者建议俺写一篇关于 HTTPS 的扫盲。因为俺比较懒，当时没动笔，一拖就是两三年，都有点忘了。正好今年出了两个跟 HTTPS 相关的高危漏洞（&lt;a href=&quot;https://en.wikipedia.org/wiki/Heartbleed&quot;&gt;Heartbleed&lt;/a&gt; 和 &lt;a href=&quot;https://en.wikipedia.org/wiki/POODLE&quot;&gt;PODDLE&lt;/a&gt;），于是俺又想起这事儿。&lt;/p&gt;
+
+&lt;p&gt;本来想单独写一篇。等写完“背景知识”这一章节，发现篇幅已经很长了。所以就再开一个系列吧。&lt;/p&gt;
+
+&lt;p&gt;事先声明：&lt;br /&gt;
+既然叫做“扫盲”，所以俺尽量避免讲太多的“技术实现细节”（当然，更不会去讲“代码实现”）。本系列侧重于：尽可能通俗地介绍“设计思路”、“实现原理”，最后再聊聊“针对 HTTPS 的攻击手法”和“相关的安全防范措施”。一开始计划写3~4篇，后来篇幅有点失控，估计要写7~8篇。&lt;/p&gt;
+
+&lt;p&gt;虽然是扫盲，或许也能让 IT 技术人员从中获益——因为俺发现：连安全行业的某些程序员，对 HTTPS 的原理也所知甚少。&lt;/p&gt;</content><author><name>Hofer</name></author><category term="HTTPS" /><summary type="html">原文链接 https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html</summary></entry><entry><title type="html">Windows Setup</title><link href="http://localhost:4000/windows-setup/" rel="alternate" type="text/html" title="Windows Setup" /><published>2022-08-11T00:00:00+08:00</published><updated>2022-08-11T00:00:00+08:00</updated><id>http://localhost:4000/%20windows-setup</id><content type="html" xml:base="http://localhost:4000/windows-setup/">&lt;h1 id=&quot;apps&quot;&gt;Apps&lt;/h1&gt;
+&lt;h2 id=&quot;office365&quot;&gt;Office365&lt;/h2&gt;
+&lt;p&gt;macOS去App Store搜：office365，进行下载安装即可&lt;br /&gt;
+windows 10、windows11 office365官网下载地址：&lt;br /&gt;
+下载链接：&lt;br /&gt;
+&lt;a href=&quot;https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/zh-cn/O365ProPlusRetail.img&quot;&gt;https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/zh-cn/O365ProPlusRetail.img&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Win系统安装激活步骤：&lt;br /&gt;
+1.复制链接到浏览器地址栏下载；
+2.找到下载的文件鼠标右键，有装载选择装载，没有就选择“解压到Pro…”
+3.双击setup开始安装；
+4.安装完成后打开word软件，在弹出的窗口点击“我不想登录或创建帐户”
+5.登录账号。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;账号：of29611@of365.ru
+密码：vSDAgYa5@-Aa-Key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;激活&quot;&gt;激活&lt;/h1&gt;
+&lt;h2 id=&quot;win10-专业版&quot;&gt;win10 专业版&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6KGHG-6QV22-47MDP-VB8GB-VQ7DM
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;激活方式：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;点此电脑/计算机右键-属性-拉到下面点激活或者更改产品秘钥-输入秘钥&lt;/li&gt;
+  &lt;li&gt;点开始菜单-设置-更新与安全-激活或者更改产品秘钥-输入秘钥&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;错误代码末尾 028  efd ，ee2，ee7等代码 是网络拥堵，重复输入几次即可错误代码1023是打错密钥，显示210的错误代码是版本不对&lt;/p&gt;
+
+&lt;h2 id=&quot;win11-专业版&quot;&gt;win11 专业版&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6KGHG-6QV22-47MDP-VB8GB-VQ7DM
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;点开始菜单-设置-激活或者更改产品秘钥-输入秘钥&lt;br /&gt;
+错误代码末尾 028  efd ，ee2，ee7等代码 是网络拥堵，重复输入几次即可错误代码1023是打错密钥，显示210的错误代码是版本不对&lt;/p&gt;
+
+&lt;h1 id=&quot;apps-1&quot;&gt;Apps&lt;/h1&gt;
+&lt;p&gt;CleanMyMac&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Apps Office365 macOS去App Store搜：office365，进行下载安装即可 windows 10、windows11 office365官网下载地址： 下载链接： https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/zh-cn/O365ProPlusRetail.img</summary></entry><entry><title type="html">macOS Setup</title><link href="http://localhost:4000/macos-setup/" rel="alternate" type="text/html" title="macOS Setup" /><published>2022-08-05T00:00:00+08:00</published><updated>2022-08-05T00:00:00+08:00</updated><id>http://localhost:4000/macos-setup</id><content type="html" xml:base="http://localhost:4000/macos-setup/">&lt;h1 id=&quot;system-preferences&quot;&gt;System Preferences&lt;/h1&gt;
+&lt;p&gt;Dock&lt;br /&gt;
+在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System Preference &amp;gt; Dock &amp;amp; Menu Bar&lt;/code&gt; 里，把 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show recent applications in Dock&lt;/code&gt; 前面的勾去掉。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.dock persistent-apps -array; killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;apps&quot;&gt;Apps&lt;/h1&gt;
+&lt;p&gt;CleanMyMac&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/xiaolai/apple-computer-literacy&quot;&gt;https://github.com/xiaolai/apple-computer-literacy&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;brew&quot;&gt;brew&lt;/h1&gt;
+&lt;p&gt;brew install todo&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">System Preferences Dock 在 System Preference &amp;gt; Dock &amp;amp; Menu Bar 里，把 Show recent applications in Dock 前面的勾去掉。 defaults write com.apple.dock persistent-apps -array; killall Dock</summary></entry><entry><title type="html">Ubuntu Setup</title><link href="http://localhost:4000/ubuntu-setup/" rel="alternate" type="text/html" title="Ubuntu Setup" /><published>2022-08-04T00:00:00+08:00</published><updated>2022-08-04T00:00:00+08:00</updated><id>http://localhost:4000/ubuntu-setup</id><content type="html" xml:base="http://localhost:4000/ubuntu-setup/">&lt;h1 id=&quot;zsh-oh-my-zsh&quot;&gt;zsh oh-my-zsh&lt;/h1&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install zsh&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/shells
+apt update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;zsh &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;
+chsh &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /bin/zsh
+reboot
+
+&lt;span class=&quot;c&quot;&gt;# install oh-my-zsh&lt;/span&gt;
+sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# config oh-my-zsh&lt;/span&gt;
+vim ~/.zshrc &lt;span class=&quot;c&quot;&gt;# ZSH_THEME=&quot;bira&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
+vim ~/.zshrc &lt;span class=&quot;c&quot;&gt;# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;apt-get install net-tools&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">zsh oh-my-zsh ```sh install zsh echo $SHELL cat /etc/shells apt update &amp;amp;&amp;amp; apt install zsh -y chsh -s /bin/zsh reboot</summary></entry><entry><title type="html">Quotes</title><link href="http://localhost:4000/quotes/" rel="alternate" type="text/html" title="Quotes" /><published>2022-08-03T00:00:00+08:00</published><updated>2022-08-03T00:00:00+08:00</updated><id>http://localhost:4000/quotes</id><content type="html" xml:base="http://localhost:4000/quotes/">&lt;p&gt;从小开始，我就拒绝接受没有弄明白的道理。～&lt;a href=&quot;https://program-think.blogspot.com/https://blog.codingnow.com/2007/08/e.html&quot;&gt;云风&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;相关网站&quot;&gt;相关网站&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://zh.wikiquote.org/&quot;&gt;https://zh.wikiquote.org/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://program-think.blogspot.com/2014/08/maxim.html&quot;&gt;https://program-think.blogspot.com/2014/08/maxim.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="quotes" /><summary type="html">从小开始，我就拒绝接受没有弄明白的道理。～云风</summary></entry><entry><title type="html">VS Code Tips</title><link href="http://localhost:4000/vscode-tips/" rel="alternate" type="text/html" title="VS Code Tips" /><published>2022-08-02T00:00:00+08:00</published><updated>2022-08-02T00:00:00+08:00</updated><id>http://localhost:4000/vscode-tips</id><content type="html" xml:base="http://localhost:4000/vscode-tips/">&lt;h1 id=&quot;快捷键&quot;&gt;快捷键&lt;/h1&gt;
+&lt;p&gt;全局搜索&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctrl+shift+f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">快捷键 全局搜索 ctrl+shift+f</summary></entry><entry><title type="html">Java Roadmap</title><link href="http://localhost:4000/java-roadmap/" rel="alternate" type="text/html" title="Java Roadmap" /><published>2022-08-01T00:00:00+08:00</published><updated>2022-08-01T00:00:00+08:00</updated><id>http://localhost:4000/java-roadmap</id><content type="html" xml:base="http://localhost:4000/java-roadmap/">&lt;h1 id=&quot;多线程与高并发&quot;&gt;多线程与高并发&lt;/h1&gt;
+&lt;p&gt;进程、线程、协程&lt;br /&gt;
+并行、并发&lt;br /&gt;
+同步、异步&lt;br /&gt;
+死锁、饥饿、活锁&lt;br /&gt;
+线程安全&lt;br /&gt;
+Java内存模型 Java Memory Model JMM&lt;br /&gt;
+创建线程的三种方式&lt;br /&gt;
+1 继承 Thread 类&lt;br /&gt;
+2 实现 Runnable 接口&lt;br /&gt;
+3 使用线程池&lt;br /&gt;
+线程的状态 new、ready、running、block、dead&lt;/p&gt;
+
+&lt;p&gt;synchronized、ReentrantLock&lt;br /&gt;
+Semaphore、CountDownLatch、CyclicBarrier、Condition&lt;br /&gt;
+Callable、Future&lt;/p&gt;
+
+&lt;h1 id=&quot;缓存&quot;&gt;缓存&lt;/h1&gt;
+&lt;p&gt;缓存穿透、缓存击穿、缓存雪崩&lt;/p&gt;
+&lt;h2 id=&quot;redis&quot;&gt;Redis&lt;/h2&gt;
+&lt;p&gt;跳表&lt;/p&gt;
+
+&lt;h1 id=&quot;大key&quot;&gt;大Key&lt;/h1&gt;
+&lt;p&gt;工具 rdb_bigkeys&lt;/p&gt;
+
+&lt;h1 id=&quot;算法&quot;&gt;算法&lt;/h1&gt;
+
+&lt;h1 id=&quot;分布式系统的一致性&quot;&gt;分布式系统的一致性&lt;/h1&gt;
+&lt;p&gt;zookeeper&lt;br /&gt;
+拜占庭将军问题&lt;/p&gt;
+
+&lt;h1 id=&quot;状态机&quot;&gt;状态机&lt;/h1&gt;</content><author><name>Hofer</name></author><category term="Java" /><summary type="html">多线程与高并发 进程、线程、协程 并行、并发 同步、异步 死锁、饥饿、活锁 线程安全 Java内存模型 Java Memory Model JMM 创建线程的三种方式 1 继承 Thread 类 2 实现 Runnable 接口 3 使用线程池 线程的状态 new、ready、running、block、dead</summary></entry></feed>
