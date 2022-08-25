@@ -27,6 +27,8 @@ source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 vim ~/.zshrc # plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+alias gitpull="git pull"
+alias gp="git add . && git commit -m 'build' && git push
 source ~/.zshrc 
 ```
 
