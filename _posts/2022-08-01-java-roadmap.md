@@ -31,6 +31,8 @@ Callable、Future
 ## Redis
 跳表  
 
+## Caffeine
+
 # 大Key
 工具 rdb_bigkeys  
 
