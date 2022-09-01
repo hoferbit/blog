@@ -45,4 +45,5 @@ zookeeper
 # 状态机
 
 # More
-[https://github.com/alibaba/canal](https://github.com/alibaba/canal)
+- [https://github.com/alibaba/canal](https://github.com/alibaba/canal)
+- paxos raft
