@@ -41,9 +41,12 @@ Callable、Future
 # 分布式系统的一致性
 zookeeper  
 拜占庭将军问题  
+paxos raft  
+
+# 分布式事务
+Seata
 
 # 状态机
 
 # More
 - [https://github.com/alibaba/canal](https://github.com/alibaba/canal)
-- paxos raft
