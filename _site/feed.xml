@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-31T15:45:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">编程随想｜扫盲 HTTPS 和 SSL/TLS 协议</title><link href="http://localhost:4000/https-program-think/" rel="alternate" type="text/html" title="编程随想｜扫盲 HTTPS 和 SSL/TLS 协议" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://localhost:4000/https-program-think</id><content type="html" xml:base="http://localhost:4000/https-program-think/">&lt;p&gt;原文链接 &lt;a href=&quot;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&quot;&gt;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-08T14:30:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">科学上网</title><link href="http://localhost:4000/1984/" rel="alternate" type="text/html" title="科学上网" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/1984</id><content type="html" xml:base="http://localhost:4000/1984/">&lt;h1 id=&quot;read&quot;&gt;Read&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/haoel/haoel.github.io&quot;&gt;https://github.com/haoel/haoel.github.io&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Read https://github.com/haoel/haoel.github.io</summary></entry><entry><title type="html">什么塑造了今天的编程世界</title><link href="http://localhost:4000/an-illustrated-history-of-programming/" rel="alternate" type="text/html" title="什么塑造了今天的编程世界" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/an-illustrated-history-of-programming</id><content type="html" xml:base="http://localhost:4000/an-illustrated-history-of-programming/">&lt;h1 id=&quot;1822&quot;&gt;1822&lt;/h1&gt;
+&lt;p&gt;计算机的起源至少可追溯到 19 世纪，英国数学家查尔斯·巴贝奇(Charles Babbage)梦想用蒸汽驱动计算。他发明的第一台计算机器——差分机，预计完工需要 25000 个零件，重达 4000 千克，然而耗时近 10 年却只制造完成了 1/7。&lt;/p&gt;</content><author><name>Hofer</name></author><category term="history" /><summary type="html">1822 计算机的起源至少可追溯到 19 世纪，英国数学家查尔斯·巴贝奇(Charles Babbage)梦想用蒸汽驱动计算。他发明的第一台计算机器——差分机，预计完工需要 25000 个零件，重达 4000 千克，然而耗时近 10 年却只制造完成了 1/7。</summary></entry><entry><title type="html">编程随想｜扫盲 HTTPS 和 SSL/TLS 协议</title><link href="http://localhost:4000/https-program-think/" rel="alternate" type="text/html" title="编程随想｜扫盲 HTTPS 和 SSL/TLS 协议" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://localhost:4000/https-program-think</id><content type="html" xml:base="http://localhost:4000/https-program-think/">&lt;p&gt;原文链接 &lt;a href=&quot;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&quot;&gt;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;引子&quot;&gt;引子&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/H_exzSD20W99qSJhGkLJFPwj3gU7VF_t9VGsbHS19Zkky6Vgrhcn8OG4c3--8-qr3DjL-H6lOQVfYcYEZ5qQp19yOycAvaL-Dnl29AqINsIhWK6ITliRP_tBL4nZ4z_Vw0IO&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -910,6 +912,8 @@ Callable、Future&lt;/p&gt;
 &lt;h2 id=&quot;redis&quot;&gt;Redis&lt;/h2&gt;
 &lt;p&gt;跳表&lt;/p&gt;
 
+&lt;h2 id=&quot;caffeine&quot;&gt;Caffeine&lt;/h2&gt;
+
 &lt;h1 id=&quot;大key&quot;&gt;大Key&lt;/h1&gt;
 &lt;p&gt;工具 rdb_bigkeys&lt;/p&gt;
 
@@ -917,6 +921,15 @@ Callable、Future&lt;/p&gt;
 
 &lt;h1 id=&quot;分布式系统的一致性&quot;&gt;分布式系统的一致性&lt;/h1&gt;
 &lt;p&gt;zookeeper&lt;br /&gt;
-拜占庭将军问题&lt;/p&gt;
+拜占庭将军问题&lt;br /&gt;
+paxos raft&lt;/p&gt;
 
-&lt;h1 id=&quot;状态机&quot;&gt;状态机&lt;/h1&gt;</content><author><name>Hofer</name></author><category term="Java" /><summary type="html">多线程与高并发 进程、线程、协程 并行、并发 同步、异步 死锁、饥饿、活锁 线程安全 Java内存模型 Java Memory Model JMM 创建线程的三种方式 1 继承 Thread 类 2 实现 Runnable 接口 3 使用线程池 线程的状态 new、ready、running、block、dead</summary></entry></feed>
+&lt;h1 id=&quot;分布式事务&quot;&gt;分布式事务&lt;/h1&gt;
+&lt;p&gt;Seata&lt;/p&gt;
+
+&lt;h1 id=&quot;状态机&quot;&gt;状态机&lt;/h1&gt;
+
+&lt;h1 id=&quot;more&quot;&gt;More&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/alibaba/canal&quot;&gt;https://github.com/alibaba/canal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Hofer</name></author><category term="Java" /><summary type="html">多线程与高并发 进程、线程、协程 并行、并发 同步、异步 死锁、饥饿、活锁 线程安全 Java内存模型 Java Memory Model JMM 创建线程的三种方式 1 继承 Thread 类 2 实现 Runnable 接口 3 使用线程池 线程的状态 new、ready、running、block、dead</summary></entry></feed>
