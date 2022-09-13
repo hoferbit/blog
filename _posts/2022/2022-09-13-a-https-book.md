@@ -8,181 +8,26 @@ keywords: history
 
 ---
 
-深入浅出 HTTPS：从原理到实战
+深入浅出 HTTPS：从原理到实战  
+from [ZLibrary](https://book4you.org/book/18090421/60096e)  
 
+# 内容简介
+本书是一本专业的 HTTPS 书籍，全面讲解了 HTTPS 领域的相关知识，内容包括密码学、OpenSSL 命令行、证书、TLS 协议、HTTPS 网站性能优化、HTTPS 网站优秀实践、大型网站 HTTPS 架构设计等。本书有几个特点：（1）内容全面而新颖，基于 RFC 文档、国外书籍、社区等一手资料，总结了大部分最新的 HTTPS 知识；（2）由浅入深，从基础到进阶全面掌握 HTTPS，读者能够轻松构建一个 HTTPS 网站，并使网站安全性和性能最大化，对于大型网站的 HTTPS 系统架构和应用架构设计也有指导意义；（3）内容通俗易懂，用语描述精准，充分考虑到读者的阅读和思考习惯，只要具备基础的 HTTPS 知识和 Linux知识就能无障碍阅读；（4）理论结合实践，本书除了让读者掌握 HTTPS 的交互细节，更注重实践，介绍了很多工具，让读者更好地掌握 HTTPS；（5）具有启发性，读者可以通过本书开启密码学和 HTTPS 学习之门，真正做到“深入”。
 
+HTTPS（TLS 协议）重点在于密码学，互联网安全是第一位的，所以任何技术领域（比如目前火爆的区块链）都需要密码学和 HTTPS（TLS 协议）知识，架构人员、开发人员、运维人员都适合阅读本书。
 
-李艳鹏 杨 彪 李海亮 贾博岩 刘 淏 著
+# 序 1
+我们的网站、我们的 App、我们的小程序是否有必要升级到 HTTPS 呢？这并不是一个新鲜的问题，几年来一直困扰着大家。2015 年百度搜索引擎完成其历史上最大的系统性升级——全面由 HTTP 升级到 HTTPS；2016 年苹果公告要求 App Store 中的所有应用在 2017 年 1 月 1 日之后都必须使用 HTTPS 加密连接；2017 年 1 月 9 日微信上线小程序后，要求开发者的所有服务端请求必须为 HTTPS；同时 Google 已调整搜索引擎算法，让采用 HTTPS 的网站在搜索结果中排名更靠前，并宣布从 2018 年 7 月开始所有的 HTTP 网站将标记为“不安全”。是否有必要将系统升级到 HTTPS，答案显而易见！
 
+当下的互联网已不是 20 年前只提供新闻资讯、邮件收发服务的简单互联网了，更不是让你安心网上冲浪的“洁净”互联网。互联网尤其是移动互联网，已经成为人们依赖度相当高的工具，餐饮、电影、购物、金融理财，甚至买汽车、租房、打车等都离不开它，移动互联网已完成产品和服务的交易闭环。服务内容的升级与飞速发展，进一步放大了数据安全、被劫持或泄露的风险。近些年，用户数据泄露、流量劫持、页面篡改等安全事件频发，这些安全事件往往会给个人或公司带来非常大的经济损失。
 
+安全问题已成为企业的生存之本，而 HTTP 天然的安全弊端可能会让企业产生不可挽回的巨大损失。在 HTTP 模式下，搜索或访问请求以“明文信息”，经过代理服务器、路由器、WiFi 热点、服务运营商等“中间人”通路，这就形成了“中间人”获取数据、篡改数据的可能。系统升级到 HTTPS 是企业的必行之路。
 
+不就是做一个从 HTTP 到 HTTPS 的切换吗？其实，背后却是一个复杂的工程。系统从 HTTP 升级到 HTTPS，并不是让 Web 服务器支持 HTTPS 协议这么简单，还需要考虑 CDN、负载均衡、反向代理等服务器。同时要考虑在何种设备上部署证书及私钥，涉及网络架构和应用架构的变化。这些都需要考虑合理性，尤其要兼顾访问速度与系统安全性。在部署过程中还必须保持业务的连续性，不能中断业务，要稳定地响应用户请求，做好 HTTPS 和 HTTP 的过渡和兼容。还要考虑 Referer、Cookie 等数据如何保持一致，如何避免出现访问故障，复杂度几乎是难以想象的。
 
+一想到从 HTTP 升级到 HTTPS 的复杂度，很多人望而却步、不知如何是好。或者硬着头皮使用百度搜索各类 HTTPS 升级文章，研读天书般的 RFC 文档。网上的 HTTPS 升
 
-Publishing House of Electronics Industry
 
-北京·BEIJING
-
-
-
-
-
-内 容 简 介
-
-本书是一本专业的 HTTPS 书籍，全面讲解了 HTTPS 领域的相关知识，内容包括密码学、OpenSSL
-
-命令行、证书、TLS 协议、HTTPS 网站性能优化、HTTPS 网站优秀实践、大型网站 HTTPS 架构设计等。
-
-本书有几个特点：
-
-（1）内容全面而新颖，基于 RFC 文档、国外书籍、社区等一手资料，总结了大部分最
-
-新的 HTTPS 知识；
-
-（2）由浅入深，从基础到进阶全面掌握 HTTPS，读者能够轻松构建一个 HTTPS 网站，
-
-并使网站安全性和性能最大化，对于大型网站的 HTTPS 系统架构和应用架构设计也有指导意义；（3）内
-
-容通俗易懂，用语描述精准，充分考虑到读者的阅读和思考习惯，只要具备基础的 HTTPS 知识和 Linux
-
-知识就能无障碍阅读；
-
-（4）理论结合实践，本书除了让读者掌握 HTTPS 的交互细节，更注重实践，介绍
-
-了很多工具，让读者更好地掌握 HTTPS；
-
-（5）具有启发性，读者可以通过本书开启密码学和 HTTPS 学习
-
-之门，真正做到“深入”
-
-。
-
-HTTPS（TLS 协议）重点在于密码学，互联网安全是第一位的，所以任何技术领域（比如目前火爆的
-
-区块链）都需要密码学和 HTTPS（TLS 协议）知识，架构人员、开发人员、运维人员都适合阅读本书。
-
-
-
-未经许可，不得以任何方式复制或抄袭本书之部分或全部内容。
-
-版权所有，侵权必究。
-
-
-
-图书在版编目（CIP）数据
-
-
-
-深入浅出 HTTPS：从原理到实战／虞卫东著. —北京：电子工业出版社，2018.6
-
-ISBN 978-7-121-34178-6
-
-
-
-Ⅰ. ①深… Ⅱ. ①虞… Ⅲ. ①计算机网络－网络安全 Ⅳ. ①TP393.08
-
-
-
-中国版本图书馆 CIP 数据核字（2018）第 099201 号
-
-
-
-
-
-责任编辑：董 英
-
-印 刷：三河市鑫金马印装有限公司
-
-装 订：三河市鑫金马印装有限公司
-
-出版发行：电子工业出版社
-
-北京市海淀区万寿路 173 信箱 邮编：100036
-
-开 本：787×980 1/16 印张：32 字数：659 千字
-
-版 次：2018 年 6 月第 1 版
-
-印 次：2018 年 6 月第 1 次印刷
-
-定 价：89.00 元
-
-
-
-凡所购买电子工业出版社图书有缺损问题，请向购买书店调换。若书店售缺，请与本社发行部联系，
-
-联系及邮购电话：
-
-（010）88254888，88258888。
-
-质量投诉请发邮件至 zlts@phei.com.cn，盗版侵权举报请发邮件至 dbqq@phei.com.cn。
-
-本书咨询联系方式：
-
-（010）51260888-819，faq@phei.com.cn。
-
-
-
-
-
-序 1
-
-
-
-我们的网站、我们的 App、我们的小程序是否有必要升级到 HTTPS 呢？这并不是一
-
-个新鲜的问题，几年来一直困扰着大家。2015 年百度搜索引擎完成其历史上最大的系统性
-
-升级——全面由 HTTP 升级到 HTTPS；2016 年苹果公告要求 App Store 中的所有应用在 2017
-
-年 1 月 1 日之后都必须使用 HTTPS 加密连接；2017 年 1 月 9 日微信上线小程序后，要求
-
-开发者的所有服务端请求必须为 HTTPS；同时 Google 已调整搜索引擎算法，让采用 HTTPS
-
-的网站在搜索结果中排名更靠前，并宣布从 2018 年 7 月开始所有的 HTTP 网站将标记为
-
-“不安全”。是否有必要将系统升级到 HTTPS，答案显而易见！
-
-当下的互联网已不是 20 年前只提供新闻资讯、邮件收发服务的简单互联网了，更不
-
-是让你安心网上冲浪的“洁净”互联网。互联网尤其是移动互联网，已经成为人们依赖度
-
-相当高的工具，餐饮、电影、购物、金融理财，甚至买汽车、租房、打车等都离不开它，
-
-移动互联网已完成产品和服务的交易闭环。服务内容的升级与飞速发展，进一步放大了数
-
-据安全、被劫持或泄露的风险。近些年，用户数据泄露、流量劫持、页面篡改等安全事件
-
-频发，这些安全事件往往会给个人或公司带来非常大的经济损失。
-
-安全问题已成为企业的生存之本，而 HTTP 天然的安全弊端可能会让企业产生不可挽
-
-回的巨大损失。在 HTTP 模式下，搜索或访问请求以“明文信息”，经过代理服务器、路
-
-由器、WiFi 热点、服务运营商等“中间人”通路，这就形成了“中间人”获取数据、篡改
-
-数据的可能。系统升级到 HTTPS 是企业的必行之路。
-
-不就是做一个从 HTTP 到 HTTPS 的切换吗？其实，背后却是一个复杂的工程。系统
-
-从 HTTP 升级到 HTTPS，并不是让 Web 服务器支持 HTTPS 协议这么简单，还需要考虑
-
-CDN、负载均衡、反向代理等服务器。同时要考虑在何种设备上部署证书及私钥，涉及网
-
-络架构和应用架构的变化。这些都需要考虑合理性，尤其要兼顾访问速度与系统安全性。
-
-在部署过程中还必须保持业务的连续性，不能中断业务，要稳定地响应用户请求，做好
-
-HTTPS 和 HTTP 的过渡和兼容。还要考虑 Referer、Cookie 等数据如何保持一致，如何避
-
-免出现访问故障，复杂度几乎是难以想象的。
-
-一想到从 HTTP 升级到 HTTPS 的复杂度，很多人望而却步、不知如何是好。或者硬
-
-着头皮使用百度搜索各类 HTTPS 升级文章，研读天书般的 RFC 文档。网上的 HTTPS 升
-
-
-
-深入浅出 HTTPS：从原理到实战
 
 级文章好是好，也不乏实战派好文，但大都寥寥几笔，不能全面系统地介绍 HTTPS 基础
 
@@ -220,7 +65,7 @@ HTTPS 和 HTTP 的过渡和兼容。还要考虑 Referer、Cookie 等数据如�
 
 原新浪产品事业部副总经理 王廼悦
 
-y IV y
+
 
 
 
@@ -274,8 +119,6 @@ y IV y
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 模型、TLS 协议等，并兼顾了如 Wireshark 在 TLS/SSL 协议中的使用、自动化测试 HTTPS
 
 网站等实操。相信用心阅读本书的读者，一定可以从中深入了解他在这一领域的领悟。
@@ -290,7 +133,7 @@ y IV y
 
 
 
-y VI y
+
 
 
 
@@ -350,8 +193,6 @@ Bulletproof SSL and TLS: Understanding and Deploying SSL/TLS and PKI to Secure S
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 经过一段时间的摸索，我意识到学习 HTTPS 必须参考更多的英文资料，向读者推荐
 
 两本书，分别是 Implementing SSL/TLS Using Cryptography and PKI 和 Network Security with OpenSSL: Cryptography for Secure Communications，这两本书虽然出版时间比较早，很多
@@ -410,7 +251,7 @@ Bulletproof SSL and TLS: Understanding and Deploying SSL/TLS and PKI to Secure S
 
 ◎ 充分考虑每个人的学习规律，循序渐进，由浅入深。
 
-y VIII y
+
 
 前言
 
@@ -472,9 +313,7 @@ OpenSSL 官方文档可能是最权威、最专业的渠道，但这些文档有
 
 的知识点；再比如，在编写本书的时候谷歌宣布废弃 HPKP 技术，可见整个 HTTPS 技术
 
-y IX y
 
-深入浅出 HTTPS：从原理到实战
 
 体系还在不断完善，我还会继续深入研究，也会以本书为基点，通过博客的形式分享给对
 
@@ -534,7 +373,7 @@ TLS/SSL 是 TCP/IP 协议族中独立的一个分层协议，重要性不言而�
 
 多篇幅从 FRC 的角度进行讲解，最后还采用 Wireshark 工具对协议进行了解剖，让读者直
 
-y X y
+
 
 前言
 
@@ -592,9 +431,7 @@ y X y
 
 按照本书的目录结构从前往后阅读，这样就能全面掌握知识的脉络。
 
-y XI y
 
-深入浅出 HTTPS：从原理到实战
 
 本书共 10 章，每章的大概内容如下。
 
@@ -656,7 +493,7 @@ y XI y
 
 络工具解剖了协议消息，使读者可以从多个角度掌握协议。
 
-y XII y
+
 
 前言
 
@@ -716,11 +553,9 @@ Wireshark pcap 文件。所有的示例都存放在 GitHub 上（https://github.
 
 错误，都可以去 https://github.com/ywdblog/httpsbook 提交 Issue。同时，如果有好的建议
 
-y XIII y
 
 
 
-深入浅出 HTTPS：从原理到实战
 
 或者问题，也可以直接提交 Issue 或者发送邮件至 ywblog@outlook.com，我会及时并尽力
 
@@ -816,8 +651,6 @@ Web）。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 信息的软件叫作客户端，最常见的客户端就是浏览器，比如 Chrome 和 Firefox 浏览器。信
 
@@ -947,8 +780,6 @@ IP 地址，这样客户端才能找到服务器。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 3）HTML 超文本标记语言
 
 客户端（浏览器）通过 HTTP 接收的资源一般是一个 HTML 页面，用户并不理解 HTML
@@ -1070,8 +901,6 @@ HTTP 消息主要包括两部分，分别是 HTTP 语义和 HTML 实体，这里
 POST /index.html HTTP/1.1
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Host:www.example.com
 
@@ -1207,8 +1036,6 @@ GET /index.html HTTP/1.1
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 3）响应行
 
 HTTP/1.1 200 OK
@@ -1333,8 +1160,6 @@ TCP/IP 有两个最大的特点，分别是分层和封包/拆包机制。TCP/IP
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 的职责，当网络应用程序出现问题后，能够快速定位到是哪一层出现问题并予以解决。
 
 另外每一层和它的上下层都有标准的接口规范，每一层无须关心上下层是如何工作
@@ -1432,8 +1257,6 @@ IP 包头发送给链路层；链路层在 IP 数据包前面加上以太网包�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 1.3.2 Socket 和 TCP
 
@@ -1581,8 +1404,6 @@ PHP 开发者在编写 HTTP 应用的时候一般使用 Curl 扩展，那么 Cur
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 HTTP 的应用来说。
 
 提供 WiFi 网络的攻击者可以截获所有的 HTTP 流量，而可怕的是 HTTP 流量本身是
@@ -1708,8 +1529,6 @@ HTTPS，Web 应用安全问题仍然很严峻。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 HTTP 只负责数据传输，真正的攻击对象是浏览器（用户）和服务器（数据）。HTTP
 
@@ -1843,8 +1662,6 @@ JavaScript 最多获取设备上的 Cookie，不能获取设备的其他信息�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 开发人员可以对请求数据进行转义，但是这些办法不具备普适性，依赖于开发人员的编码
 
 能力，那么有没有一种标准的方法来缓解安全问题呢？W3C 在这方面做了很多的努力。
@@ -1932,8 +1749,6 @@ example.com;
 密码学算法的实现原理是公开的，读者可能觉得这观点很奇怪，很多开发者喜欢设计
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 千奇百怪的算法，窃以为别人并不知道，其实自行设计的算法根本不具备严格的数学模型，
 
@@ -2067,8 +1882,6 @@ PKCS 标准）。开发者可以不了解密码学算法的原理，但是必须
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 还钱的时候，A 抵赖说这张借条不是他写的，理由就是有人冒充他写了这张借条，A 的行
 
 为可以抵赖。在密码学中，数字签名技术能够避免抵赖。
@@ -2188,8 +2001,6 @@ Valid options are:
 -modulus Print the RSA key modulus
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 -check Verify key consistency
 
@@ -2349,8 +2160,6 @@ OpenSSL 1.1.0f 25 May 2017
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 成两个完全相同的随机数，只是周期长短的问题。
 
 在密码学中应该尽量使用周期相对长的随机数，为了实现真正不可重现性的随机数，
@@ -2493,8 +2302,6 @@ salt
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 法和密码学 Hash 算法呢？
 
 原因就在于随机数生成器算法和密码学 Hash 算法都是密码学中的基础算法，很多其
@@ -2633,8 +2440,6 @@ HMAC 就是一个基于 Hash 算法实现的 MAC 算法
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 1）文件比较
 
 某个用户从互联网上下载了两个 MP4 格式的电影，但不确定是不是同一个电影，最
@@ -2762,8 +2567,6 @@ SHA（Secure Hash Algorithms）算法是美国国家标准与技术研究院（N
 SHA-1 算法类似于 MD5 算法，输出的长度固定是 160 比特。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 目前 SHA-1 算法在严谨的加密学中已经被证明是不安全的，但是在实际应用过程中
 
@@ -2969,8 +2772,6 @@ ciphers），表 2-7 和表 2-8 简单列举了常用的对称加密算法。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 表 2-7 块密码算法
 
 算 法
@@ -3163,8 +2964,6 @@ XOR 01110011 01101011 01100101 01111001
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 有了密钥流，随后的加密解密就非常简单了，就是 XOR 运算。
 
 流密码算法之所以称为流密码算法，就在于每次 XOR 运算的时候，是连续对数据流
@@ -3271,8 +3070,6 @@ ECB 模式最大的特点就是每个迭代过程都是独立的，是可以并�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 规律，比如密文中多次出现 71，最终可能能成功破解出明文。
 
 即使攻击者不能破解，也可以篡改密文，比如将所有的 71 替换为 77，然后再将篡改
@@ -3372,8 +3169,6 @@ CTR 模式（counter）在迭代的时候，相当于是一个流密码的运行
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 先通过图 2-6 了解加密过程。
 
@@ -3527,8 +3322,6 @@ zero 字符填充模式最大的问题就是如果明文末尾本身就存在 ze
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 01
 
 02 02
@@ -3660,8 +3453,6 @@ iv =1AF6EFF5B184C9BF4554E1A5E60A1054
 ◎ -aes-256-cbc 表示加密算法和标准。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ -p 参数是打印本次加密过程中 salt、密钥、初始化向量的值。
 
@@ -3825,8 +3616,6 @@ $iv
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 );
 
 }
@@ -3963,8 +3752,6 @@ Hash 算法得到一个摘要值，摘要值和接口消息同时作为接口内
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 了，或者说消息被伪装了，但对于接收方来说，仅仅通过摘要值无法验证消息是不是篡改
 
 了，这时候需要使用 MAC 算法。
@@ -4092,8 +3879,6 @@ message))
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 function hmacSign($message, $key){
 
@@ -4261,8 +4046,6 @@ echo "成功篡改：" . $ciphertext . "_" . $rd . "\n" ; exit;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 息的完整性，将两者结合起来，就可以保证消息同时具备机密性和完整性，演示的 PHP
 
 代码如下：
@@ -4385,8 +4168,6 @@ CCM（Counter with CBC-MAC）模式也是一种 AEAD 模式，不过在 HTTPS �
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 CTR 模式的一种变种进行加密运算，底层采用的是 MAC-then-Encrypt 模式。
 
 2）GCM 模式
@@ -4508,8 +4289,6 @@ BIGNUM *d;
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 从上面的过程可以看出，密钥对的生成是依赖于数学知识的，有复杂的关系，整个过
 
@@ -4693,8 +4472,6 @@ Pseudo-random Number Generation
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 两种填充机制分别是 RSAES-PKCS1-V1_5 和 RSAES-OAEP，两者在命名上显得有点
 
 奇怪，RSAES-PKCS1-V1_5 其实是 PKCS#1 v1.5 以前的版本，而 RSAES-OAEP 可以认为
@@ -4820,8 +4597,6 @@ $ openssl rsa -in mykey2.pem -pubout -out mypubkey2.pem
 输出一个公钥文件。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 （3）校验密码对文件是否正确：
 
@@ -4979,8 +4754,6 @@ openssl_free_key($pkeyid);
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 // 输出原始值和解密值
@@ -5131,8 +4904,6 @@ PBE 算法生成的密钥一般情况下无须存储，因为使用同样的口�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 法是存在安全风险的，很多开发者喜欢使用这种方式存储口令，所以重点讲解下其潜在的
 
 风险。
@@ -5265,8 +5036,6 @@ $ openssl enc -aes-256-cbc -salt -in file.txt -out file.enc -pass pass:password 
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 使用 enc 子命令加密的时候，可以基于口令和 salt 生成一个对称加密算法强密钥，如
 
 果操作者显示输入密钥的话，可能会使用一个很容易被暴力破解的对称加密算法密钥。而
@@ -5394,8 +5163,6 @@ TCP 连接传输的密钥不一样，这就是动态密钥。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 会话密钥的意思就是该密钥不用存储，一旦客户端和服务器端的连接关闭，该密
 
@@ -5527,8 +5294,6 @@ BIGNUM *priv_key;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 通过参数，服务器端和客户端会生各自生成一个 DH 密钥对，私钥需要保密。
 
 2）DH 算法处理过程
@@ -5634,8 +5399,6 @@ $ openssl dhparam -in dhparam.pem -noout -C
 $ openssl genpkey -paramfile dhparam.pem -out dhkey.pem
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 查看密钥对文件内容:
 
@@ -5803,8 +5566,6 @@ ECC 是新一代的公开密钥算法，主要的优点就是安全性，极短�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 安全性。比如 224 比特的 ECC 密钥和 2048 比特的 RSA 密钥可以达到同样的安全水平，
 
 由于 ECC 密钥具有很短的长度，运算速度非常快。ECC 基于非常复杂的算法，到目前位
@@ -5924,8 +5685,6 @@ B: 7 (0x7)
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Generator (uncompressed):
 
@@ -6079,8 +5838,6 @@ ANSSI FRP256V1
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 不同标准的命名曲线命名可能不一样，但是大部分含义是相同的，建议使用 NIST 标
 
 准建立的命名曲线，表 2-13 列举了一些常见的命名曲线。
@@ -6219,8 +5976,6 @@ DSA 数字签名算法和 ECDSA 数字签名算法。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 回到密码学中，如果一个消息也含有特殊的指纹，那么它是否就不能抵赖呢？仔细回
 
 忆 RSA 密钥对，私钥只有密钥对的生成者持有，如果不考虑密钥泄露的问题，私钥拥有
@@ -6334,8 +6089,6 @@ m = s^e (mod n)
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 $ openssl genrsa -out rsaprivatekey.pem 1024
 
@@ -6491,8 +6244,6 @@ DSS（ Digital Signature Standard）， 其标 准 算法 就是 DSA 签名 算 
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Algorithm），它是美国国家标准技术研究所（NIST）在 1991 年提出的签名算法，只能进
 
 行签名，不能进行加密解密。
@@ -6622,8 +6373,6 @@ ECC 算法的参数文件。
 ◎ dsa 和 rsa 子命令差不多，都表示查看密钥对文件的内容。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ genpkey、pkeyparam、pkey 是一个集大成者的子命令，能够完成公开密钥算法的
 
@@ -6787,8 +6536,6 @@ ECC 命名曲线的结构已经讲解过，在结合 DSA 算法的时候，有�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ ECDSA，算法选择的命名曲线。
 
 ◎ G，椭圆曲线的基点。
@@ -6920,8 +6667,6 @@ Verified OK
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 // 对于 ECDSA 来说，增加了 curve_name 命名曲线参数
 
@@ -7091,8 +6836,6 @@ ECC 椭圆曲线
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 方法可能会带来完全不一样的结果，影响测试结果的因素很多，需要注意：
 
 ◎ 服务器硬件，比如 CPU 核数、支持的指令集，硬件对密码学的性能有着决定性
@@ -7206,8 +6949,6 @@ options:bn(64,64) rc4(16x,int) des(int) aes(partial) blowfish(ptr) The 'numbers'
 type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes 16384 bytes
 
 aes-128-gcm 118326.90k 226931.31k 287340.59k 309564.48k 
-
-深入浅出 HTTPS：从原理到实战
 
 315874.69k 315842.83k
 
@@ -7467,8 +7208,6 @@ aes-128-cbc 使用 AES-NI 指令集
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 总结：
 
 ◎ 使用 AES-NI 指令集的运算性能比禁止使用 AES-NI 指令集快得多。
@@ -7666,8 +7405,6 @@ $ openssl speed ecdsa
 测试结果如表 2-21 所示。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 表 2-21 测试结果
 
@@ -7953,8 +7690,6 @@ sha1
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 续表
 
 算 法
@@ -8064,8 +7799,6 @@ sha512
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 一个扩展，主要应用于 HTTP。
 
@@ -8178,8 +7911,6 @@ TLS/SSL 协议的核心目标。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 通过图 3-1 也可以看出，对于应用层协议来说，它无须过多改变，引入 TLS/SSL 协议
 
@@ -8308,8 +8039,6 @@ HTTP 和 TLS/SSL 协议组合在一起就是 HTTPS，HTTPS 等同于 HTTP+TLS/SS
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 听非 80 端口，默认是 443 端口。当接收到 HTTPS 请求后，Nginx 服务器处理了所有 TLS/SSL
 
@@ -8473,8 +8202,6 @@ TLS/SSL 协议核心就三大步骤：认证、密钥协商、数据加密，当
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 使用公开密钥加密算法的缺点就是运算慢，尤其是 HTTP 传输的数据都非常大，所以
 
 在大部分 Web 应用中很少使用公开密钥算法进行加密解密运算。
@@ -8598,8 +8325,6 @@ DH 公钥，最后将签名值、DH 参数、服务器 DH 公钥发送给客户�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 算法确保安全性。
 
@@ -8725,8 +8450,6 @@ PRF 算法需要输入三个参数，即 PRF（scret,label,seed），其中 scre
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 是一个固定标识符，seed 就是上面提到的 salt，是一个随机值。运行该函数后能输出任意长
 
 度的一个值，那么是如何做到输出任意长度的呢？PRF 函数实际是对 P_hash 的函数的一个
@@ -8830,8 +8553,6 @@ HMAC 算法的密钥、初始化向量，从密钥块中切割即可得到这些
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 攻击者使用自己的密钥块 A、采用 AES 算法解密出明文，客户端相当于泄露了
 
@@ -8958,8 +8679,6 @@ CA 机构也拥有一个密钥对，比如 RSA 密钥对（与服务器的 RSA �
 书的签名，一旦校验成功，就代表这个证书是可信的 CA 机构签发的。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 成功验证签名只能表示该证书是 CA 机构签发的，并不代表确认了身份，浏览器会继
 
@@ -9095,8 +8814,6 @@ CA 机构也就失去了生存基础，浏览器就会取消该 CA 机构的根�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 图 3-4 和图 3-5 简单描述了 HTTPS 完整的处理流程，虽然和 TLS/SSL 协议 RFC 文档
 
 有出入，但是对于理解工作原理非常有帮助。
@@ -9180,8 +8897,6 @@ HTTP 是没有握手过程的，完成一次 HTTP 交互，客户端和服务器
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 不完全一致，客户端和服务器端必须协商出一个双方都能接受的协议版本，确保
 
@@ -9305,8 +9020,6 @@ TLS_ECDHE_WITH_ECDSA_AES_256_GCM_SHA384
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 如果密码套件配置的 Hash 算法比默认的 SHA256 算法更安全，则采用更高安全
 
 级别的 Hash 算法，在本例中 PRF 算法使用的加密基元是 SHA384 算法。
@@ -9428,8 +9141,6 @@ OpenSSL 命令行工具的 s_client 子命令是非常有用的一个命令，�
 含 DH 参数和 DH 公钥。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 为了保持前向安全性，目前使用最多的密钥协商算法就是 DHE 算法和 ECDHE 算法，
 
@@ -9559,8 +9270,6 @@ AEAD 是一种比较新型的加密模式，一步就能解决加密和完整性
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 网站并不复杂，但要部署一个绝对安全的 HTTPS 网站则非常不容易，本节简单描述 HTTPS
 
 网站部署的必备条件和大概思路，在第 5 章会以实例描述 HTTPS 网站的构建。
@@ -9687,8 +9396,6 @@ example.com 的请求。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 暴露在互联网上的 HTTP URL 地址，比如来自搜索引擎的 HTTP 请求，必须重定
 
 向到 HTTPS 请求上。
@@ -9792,8 +9499,6 @@ Web 应用的安全性主题非常多，远比 HTTPS 协议复杂得多，W3C �
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 从技术角度看，该图标表示：
 
@@ -9906,8 +9611,6 @@ HTTPS 元素，则代表页面出现了混合内容。一个 HTTPS 页面如果�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 浏览器确认了服务器合法的身份。
 
@@ -10115,8 +9818,6 @@ Let’s Encrypt 是一个免费 CA 机构，其签发和管理证书的过程都
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 这对于 HTTP 网站来说问题不大。
 
 而对于 HTTPS 网站来说，证书和域名息息相关，从域名的角度来看，证书可以包含
@@ -10244,8 +9945,6 @@ HTTPS，很多技术人员认为 HTTPS 性能太差了，根本不具备实施�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 HTTPS 性能消耗主要包括两方面，对服务器和浏览器都有影响。
 
@@ -10376,8 +10075,6 @@ HTTPS 项目完成时间包括两部分。前期的准备，主要是规划网�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 移，大家的质疑会更小一点，完成时间也会缩短。换句话说，实施 HTTPS 网站可以遵循
 
@@ -10581,8 +10278,6 @@ HTTPS 服务最大的载体是浏览器，尤其是 Chrome 和 Firefox 也要求
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 为这是趋势，更早实施给企业带来安全性的同时，也能带来更好的企业形象。
 
 4.2.3 企业形象
@@ -10707,8 +10402,6 @@ Chrome 会标记该网站为不安全。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Firefox 浏览器也有类似的策略，相信未来某一天，所有的 HTTP 网站都会直接被标识
 
 为不安全。
@@ -10782,8 +10475,6 @@ HTTPS 网站，在此基础上再去了解 HTTPS 的其他知识点效果会更�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 证书和密钥对是关联保存的，需要避免密钥对尤其是私钥泄露，一旦出现泄露，需要
 
@@ -10910,8 +10601,6 @@ $ openssl req \
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Country Name (2 letter code) [AU]:CN
 
@@ -11046,8 +10735,6 @@ $ ./certbot-auto certonly --webroot -w /usr/nginx/web -d www.example.com
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 需要提醒的是，webroot 插件为了校验申请者的身份，申请者必须在运行 Certbot 客户
 
@@ -11195,8 +10882,6 @@ vim /etc/apache2/sites-available/default-ssl.conf
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 <VirtualHost _default_:443>
 
 DocumentRoot /var/www/html
@@ -11333,8 +11018,6 @@ CApath: none
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 该图描述了三部分信息：
 
 ◎ 本次连接使用 Let’s Encrypt Authority X3 签发的服务器实体证书。
@@ -11459,8 +11142,6 @@ HSTS 标准（HTTP Strict Transport Security）2009 年被提出，2012 年被�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 在浏览器中输入 www.example.com，浏览器默认会访问 http://www.example.com 而不是 https://www.example.com。
 
 ◎ 搜索引擎或者用户浏览器收藏夹中保存了很多明文 HTTP 连接，明文连接和加密
@@ -11584,8 +11265,6 @@ example.com 下的子域名（比如 www1.www.example.com）实施了 HSTS 标�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 在实施 example.com 全站 HSTS 策略的时候，必须确保该域名下的所有主机都支
 
@@ -11768,8 +11447,6 @@ https://hstspreload.org 了解详细情况。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 301 重定向和 HSTS 标准能够解决部分混合内容的问题，但都属于被动的解决方式。实施
 
@@ -12001,8 +11678,6 @@ upgrade-insecure-requests
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 relative URL），是非常有用的一种语法。如果主页面使用 https://协议访问，则引用的资源
 
 才也使用 https://协议访问，如果主页面使用 http://协议访问，则引用的资源才也使用 http://
@@ -12111,8 +11786,6 @@ add_header Content-Security-Policy "default-src 'none'; img-src http:
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 https: ;script-src 'self' https://code.jquery.com;"; 配置后查看 Firefox 控制台的输出，具体如图 5-6 所示。
 
 
@@ -12202,8 +11875,6 @@ PKI（Public Key Infrastructure，称为公钥基础设施）是一个集合体�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 6.1.1 X.509 标准
 
@@ -12316,8 +11987,6 @@ ASN.1（Abstract Syntax Notation One）的概念，ASN.1 是国际电信联盟�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 定义了复杂的数据结构，除非读者要编写证书解析器，否则没必要完全理解 ASN.1 内部结
 
@@ -12450,8 +12119,6 @@ algorithm 类型是 OBJECT IDENTIFIER(OLD)，这个结构有点复杂，在 X.50
 ECDSAWithSHA256 = {1, 2, 840, 10045, 4, 3, 2}
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ECDSAWithSHA384 = {1, 2, 840, 10045, 4, 3, 3}
 
@@ -12589,8 +12256,6 @@ DHPublicKey 包含一个公钥，公钥通过 y = g^x mod p 公式计算得到�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 情况下，可以相对方便地增加证书新属性，新添加的扩展是否生效取决于证书校验方。
 
 想象一下，由于实际使用的需要，证书 ASN.1 结构需要引入新的特性，如果没有扩展，
@@ -12723,8 +12388,6 @@ certificationRequestInfo 进行数字签名最终生成 CSR 文件。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 生成 CertificationRequestInfo 结构体，主要包含域名、公钥。
 
 ◎ 使用私钥对 CertificationRequestInfo 进行数字签名得到签名值。
@@ -12854,8 +12517,6 @@ Sign，分别表示该证书可以进行数字签名、可以签发服务器实�
 列表，证书校验方可以通过该扩展严格校验证书的使用范围。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 6）密钥扩展用法（Extended Key Usage）
 
@@ -12989,8 +12650,6 @@ CA 根据严格的标准会审核申请者身份，比如说审核申请者的�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 对于 CA 机构来说，CA 机构会严格根据 CA/Browser 论坛制定的标准审核申请者的身份，
 
 该标准称为 Baseline Requirement 标准，是由浏览器厂商、CA 等机构创建的。
@@ -13117,8 +12776,6 @@ com 主机和 www2.www.example.com 主机不能合并到.example.com 泛域名�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 并到.www.example.com 证书中。
 
 （3）SAN（Subject Alternative Names）证书
@@ -13218,8 +12875,6 @@ Encrypt Authority X3 签发的，该证书包含了服务器实体的一些信�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 3）根证书
 
@@ -13337,8 +12992,6 @@ CA 密钥标识符（Authority Key Identifier），进而获取上一级中间�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 现在假设浏览器拥有了完整的证书链（不包含根证书），服务器实体证书和根证书分
 
 别只有一张，中间证书可以有多张，接下来讲解的内容依赖于此约定。
@@ -13454,8 +13107,6 @@ Windows 中也集成了根证书，存储的目录为 HKEY_CURRENT_USER，打开
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 在 Windows 系统中，Chrome、IE、Edge、Outlook 使用的都是系统的根证书，Firefox 经过配置也可以使用 Windows 操作系统的证书库。
 
@@ -13574,8 +13225,6 @@ Let’s Encrypt Authority X3 (Let’s Encrypt DST 中间证书)
 实体 certificates (实体证书)
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 注意一点，由于大部分证书校验方还没有集成 Let’s Encrypt 根证书，所以向 Let’s
 
@@ -13717,8 +13366,6 @@ ECDSA 或者 RSA 公钥，这样的证书叫作双证书，双证书的工作原
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 3）中间证书校验
 
 和服务器实体证书一样，每个中间证书也要进行校验。
@@ -13836,8 +13483,6 @@ cRLSign。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 既然 CRLs 被数字签名保护，证书校验方必须校验 CRLs 文件的签名，和验证服务器
 
@@ -13981,8 +13626,6 @@ crlExtensions [0] EXPLICIT Extensions OPTIONAL
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 }
 
 （1）issuer
@@ -14105,8 +13748,6 @@ CA 机构接收到证书吊销请求后，并不会立刻更新 CRLs，在没有
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 6.5 OCSP
 
 OCSP 和 CRL 一样，也是 PKI 技术的一部分，CRL 目前已经逐步被 OCSP 淘汰，通
@@ -14222,8 +13863,6 @@ OCSP 请求方一般是浏览器，发出的请求结构如下：
 ◎ 可选的扩展。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 证书的吊销状态信息，包含具体的吊销状态。
 
@@ -14348,8 +13987,6 @@ OCSP 响应需要签名，生成签名也需要有一个证书链，服务器实
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 这是可选的。
 
@@ -14476,8 +14113,6 @@ reqCert 的类型是 CertID，由 4 部分组成。
 计算。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ issuerKeyHash：表示 OCSP 请求方对服务器实体证书的公钥进行摘要计算。
 
@@ -14617,8 +14252,6 @@ nextUpdate [0] EXPLICIT GeneralizedTime OPTIONAL, singleExtensions [1] EXPLICIT 
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 CertStatus ::= CHOICE {
 
 good [0] IMPLICIT NULL,
@@ -14734,8 +14367,6 @@ OCSP 封套相比标准 OCSP 来说，不是由浏览器发出 OCSP 请求，而
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 如果浏览器没有接收到 CertificateStatus 子消息，表示服务器不能正确处理 OCSP
 
@@ -14858,8 +14489,6 @@ www_chain.pem。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 的对象，以及对象之间的关系。证书本质上是一个文件，需要一种专门的格式，才能在互
 
@@ -14984,8 +14613,6 @@ $ openssl pkcs7 -print_certs -in cert.p7b -out fullchain.cer 6.7.3 获取线上�
 $ openssl s_client -connect www.example.com:443 -showcerts 2>&1 </dev/null 命令会输出很多信息，下面的输出信息表示完整的证书链（包括根证书）共有三张证
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 书，Let’s Encrypt Authority X3 证书签发 www.example.com 服务器实体证书，DST Root CA X3 根证书签发 Let’s Encrypt Authority X3 证书。
 
@@ -15135,8 +14762,6 @@ issuer=O = Digital Signature Trust Co., CN = DST Root CA X3
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 6-7 Chrome 导出证书（1）
@@ -15196,8 +14821,6 @@ Linux、Windows、应用软件导入根证书的细节。
 （1）下载 Mozilla 根证书库
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 使用 Curl 的 mk-ca-bundle 工具可以从 Mozilla 下载根证书，并转换为各个 CA 机构的
 
@@ -15286,8 +14909,6 @@ Chrome 浏览器直接信任该证书，不会提示该证书存在安全风险�
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 6.7.5 OpenSSL 管理 CSR
 
@@ -15441,8 +15062,6 @@ $ openssl req -in myreq.pem -noout -verify -key example_csr.pem verify OK
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 4）CSR 格式转换
 
 和证书一样，CSR 文件也有多种格式，可以互相转换。
@@ -15588,8 +15207,6 @@ e5:4e:f7:e1:27:4b:e6:c4:57:52:95:15:39:0e:66:
 a1:51:7d:d0:bd:7a:4e:98:16:81:c0:b6:60:2a:76:
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 50:41:97:f7:ce:0c:f9:a7:b1:9f:d5:5b:3a:21:f5:
 
@@ -15750,8 +15367,6 @@ $ openssl x509 -in cert.pem -text -noout
 Certificate:
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Data:
 
@@ -15929,8 +15544,6 @@ fa:25:a5:91:87:15:e0:f2:16:2f:58:b0:06:2f:2c:68:26:c6:
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 4）使用 OpenSSL x509 子命令查看根证书
 
 DST_ROOT.pem 是 IdenTrust CA 机构的根证书 DST Root CA X3，获取方式本节开始的
@@ -16094,8 +15707,6 @@ d5:39:ee:8f:b0:02:6b:6a:22:ac:b6:75:8b:fe:41:e0:76:52:
 95:57:6d:1e:d2:b1:10:57:5c:xe:72:66:0c:78:cd:fb:3b:6f:
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 93:f1:b7:97:e1:74:d3:4e:64:47:71:9b:5d:1e:21:e4:61:68:
 
@@ -16271,8 +15882,6 @@ Responder Id: C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Produced At: Nov 24 02:51:00 2017 GMT
 
 # 待查询证书的状态信息
@@ -16438,8 +16047,6 @@ f1:fa:fc:e0:59:2c:a1:a1:e7:e8:14:b6:9c:28:3d:63:1b:ed:
 f1:7b:a3:3e:bd:b6:27:cd:d9:fd:86:0a:81:08:f7:b2:76:e6:
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 6b:38:22:22:48:3b:e2:64:1b:9e:36:0e:25:7a:54:50:13:12:
 
@@ -16623,8 +16230,6 @@ a0G2JGgRF6d8AGb49fOK604GJNrs7EXCmgkYqzaKLItwNqFHltWp2nfB0XcoQM/f y8zxy3kuNYeM2oo
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 DFrtI7UCAwEAAaOBqzCBqDAPBgkrBgEFBQcwAQUEAgUAMCIGA1UdEQQbMBmkFzAV
 
 MRMwEQYDVQQDEwpUR1YtRS0zMzU4MB8GA1UdIwQYMBaAFNJv95b0hT9yPDB9I9qF
@@ -16798,8 +16403,6 @@ SAN 证书
 ◎ 最多可以包含 250 个主机。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 其签发的证书可以支持通配符，收费价格是不一样的，每增加一个主机，每年需
 
@@ -16975,8 +16578,6 @@ Thawte
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 克签发的证书。
 
 国内有很多的 CA 代理公司，用户选择的时候要谨慎，如果没有特殊需求，Let’s Encrypt
@@ -17084,8 +16685,6 @@ SCT 非常重要，相当于证书签发的票据，客户端（浏览器）需�
 重要的组成部分。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 任何组织都可以建立 Certificate Logs 服务，CA 或者服务器实体在获取证书的时候，
 
@@ -17269,8 +16868,6 @@ Signed Certificate Timestamp:
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Version : v1 (0x0)
 
 Log ID : A4:B9:09:90:B4:18:58:14:87:BB:13:A2:CC:67:70:0A: 3C:35:98:04:F9:1B:DF:B8:E3:77:CD:0E:C8:0D:DC:10
@@ -17426,8 +17023,6 @@ D5:5E:A8:31:98:71:70:EF:89:23:BC:41:DF:0A:AE:28:
 2B:8D:23:82:FC:3E:77
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 （3）TLS 扩展方式获取 SCT
 
@@ -17661,8 +17256,6 @@ Let’s Encrypt 证书采用 SHA2 族算法进行数字签名，如果证书校�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 从 Let’s Encrypt 官方文档可以看到，只有比较古老的系统不支持 Let’s Encrypt 证书。
 
 下列系统不能使用 Let’s Encrypt 签发的证书：
@@ -17791,8 +17384,6 @@ renew 这个英文不要理解为更新证书，renew 不是更新证书属性�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 应该解释为证书续期，证书有效期是 90 天，一旦证书有效期小于 30 天，Let’s Encrypt 会
 
 通过邮件提醒用户续期。
@@ -17912,8 +17503,6 @@ ACME 是协议标准，对于服务器实体来说，需要选用一个实现该
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 官方推荐的是 Certbot 客户端，该客户端功能很强大，充分考虑了服务器实体的不同
 
@@ -18042,8 +17631,6 @@ HTTPS 网站。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 tls-sni-01 验证方式很有趣，操作者想部署一个 HTTPS 网站，但是却要用 HTTPS 方式
 
@@ -18211,8 +17798,6 @@ $ tree /etc/letsencrypt/archive
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ├── chain1.pem
 
 ├── fullchain1.pem
@@ -18346,8 +17931,6 @@ blank to select all options shown (Enter 'c' to cancel): 1,2
 You have an existing certificate that contains a portion of the domains you requested (ref: /etc/letsencrypt/renewal/www1.example.com.conf) It contains these names: www1.example.com
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 
 
@@ -18495,8 +18078,6 @@ Waiting for verification...
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Cleaning up challenges
 
 接下来去除--dry-run 参数，运行真实命令：
@@ -18642,8 +18223,6 @@ Please deploy a DNS TXT record under the name
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 _acme-challenge.www4.example.com with the following value: 34ru9Jbm0z1s40vOu8wpkkkcSdVefK_Lo81TfQyRUc4
 
@@ -18791,8 +18370,6 @@ Certificate Path: /etc/letsencrypt/live/www4.example.com/fullchain.pem
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Private Key Path: /etc/letsencrypt/live/www4.example.com/privkey.pem Certificate Name: www1.example.com
 
 Domains: www2.example.com www1.example.com
@@ -18919,8 +18496,6 @@ $ openssl req -new -sha256 -newkey rsa:2048 -nodes \
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 -keyout www6.example.com_key.pem -out www6.example.com_csr.der
 
 
@@ -19039,8 +18614,6 @@ Firefox 选择了一条不同的证书链进行校验，而对于 Chrome 来说�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 7-2 Let’s Encrypt 信任链
@@ -19136,8 +18709,6 @@ RFC 文档是学习密码学和 TLS/SSL 协议最好的资料，很多读者对�
 炼出精华内容，能够让读者在有限的时间掌握密码学和 TLS/SSL 协议的基本知识。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 学习 TLS/SSL 协议比较好的方法就是先掌握 OpenSSL 命令行的使用，很多读者
 
@@ -19385,8 +18956,6 @@ RFC 6962
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 该 RFC 文档，能够比较全面地掌握 TLS/SSL 知识。
 
 8.2 描述语言
@@ -19518,8 +19087,6 @@ case en: Ten;
 } [[Tv]];
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 fv 的类型由 E 这个变量决定，可以是 Te1、Te2 类型等。
 
@@ -19667,8 +19234,6 @@ TLS 握手协议由 4 个子协议构成，分别是：
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 密码切换协议（Change Cipher Spec Protocol）。
 
 这 4 个子协议是并行关系，每个子协议有不同的作用，最关键的是握手子协议，子协
@@ -19802,8 +19367,6 @@ CERTIFICATE
 0x0b
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -19979,8 +19542,6 @@ Change Cipher Spec 协议的作用就是通知 TLS 记
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 息就是应用层协议数据。
 
 应用层协议的消息格式比较简单，如图 8-6 所示。
@@ -20106,8 +19667,6 @@ enum { tls_prf_sha256 } PRFAlgorithm;
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 # 加密算法，比较流行的是 aes 算法
 
@@ -20239,8 +19798,6 @@ TLS 记录层协议主要有四部分的逻辑处理：
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 8-7 记录层协议逻辑处理
@@ -20369,8 +19926,6 @@ fragment 是加密处理后的数据，加密后的数据也包含了 MAC 的值
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 通过加密参数的 cipher_type 可以看出 TLS/SSL v1.2 包含三种加密模式，第一种是流
 
 密码模式（stream），目前已经很少使用了。
@@ -20488,8 +20043,6 @@ struct {
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 opaque IV[SecurityParameters.record_iv_length];
 
@@ -20629,8 +20182,6 @@ AEADEncrypted = AEAD-Encrypt(write_key, nonce, plaintext, additional_data)
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 8-10 AEAD 模式逻辑图
@@ -20742,8 +20293,6 @@ Application Data <-------> Application Data 在讲解流程之前，有几点需
 套件以及对应的算法，检查会话是否可恢复。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 交换证书和密码学信息，允许服务器端和客户端互相校验身份，本章主要讲解服
 
@@ -20897,8 +20446,6 @@ session_id 和会话恢复有关，详细的内容本章后续讲解，本节简
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 供更多的可扩展性。
 
 扩展比较多，本章后续会详细描述，目前只要知道客户端 Client Hello 消息和服务器
@@ -21028,8 +20575,6 @@ ASN.1Cert certificate_list<0..2^24-1>;
 如果服务器消息中仅仅包含了服务器实体证书，客户端一般会构建完整的证书链，但
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 这不属于 TLS/SSL 协议的规定，是否构建完整证书链取决于客户端，服务器证书的标准必
 
@@ -21168,8 +20713,6 @@ ECDH_ECDSA、ECDH_RSA 这些名字的存在仅仅是历史原因。
 ◎ 该消息的结构。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 1）Server Key Exchange 子消息和密码套件的关系
 
@@ -21310,8 +20853,6 @@ enum {
 secp256k1 (22), secp256r1 (23), secp384r1 (24),
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 } NamedCurve;
 
@@ -21469,8 +21010,6 @@ case dhe_dss:
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 case dhe_rsa:
 
 case dh_dss:
@@ -21622,8 +21161,6 @@ ECPoint ecdh_Yc;
 计算主密钥和密钥块是两个不同的过程，接下来分别介绍。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 1）计算主密钥
 
@@ -21827,8 +21364,6 @@ SHA1
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 8.5.8 Change Cipher Spec 协议
 
 该协议并不是握手协议的一部分，但在理解的时候可以认为是握手协议的子消息。客
@@ -21956,8 +21491,6 @@ Hello 消息中的版本号是客户端支持的最高 TLS/SSL 版本，最终 S
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 本号是 TLS v1.0（被中间人篡改了），服务器端发现两个版本号不相等，说明消
 
@@ -22153,8 +21686,6 @@ opaque extension_data<0..2^16-1>;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 有些扩展类型对应的扩展数据可能是空的，下面列举一些常见的扩展定义：
 
 enum {
@@ -22304,8 +21835,6 @@ Type: signed_certificate_timestamp (18)
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Length: 242
 
@@ -22471,8 +22000,6 @@ Certificate Status
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Certificate Status Length: 527
 
 OCSP Response
@@ -22608,8 +22135,6 @@ enum{
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 当一个用户通过 HTTP/1.1 访问 www1.example.com，浏览器解析 URL 中的主机名字，
 
@@ -22765,8 +22290,6 @@ Signature Hash Algorithm Signature: RSA (1)
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 服务器不用在 Server Hello 消息中响应该扩展。
 
 如果客户端没有发送该扩展，服务器如何知晓客户端支持哪些扩展呢？服务器会根据
@@ -22886,8 +22409,6 @@ Hello 消息附带该值。
 话，如果没有或者不可恢复会话，则进行完整的握手协议，同时生成一个新的
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Session ID 返回给客户端。
 
@@ -23014,8 +22535,6 @@ SessionTicket 是另外一种会话恢复方式，解决了 Session ID 会话恢
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 一种更好的会话恢复方式。
 
@@ -23157,8 +22676,6 @@ Application Data <-------> Application Data
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Server Hello 消息中发送一个空的 SessionTicket TLS 扩展。
 
 （3）由于是简短握手，所以 Certificate 和 ServerKeyExchange 等子消息不发送，接下
@@ -23292,8 +22809,6 @@ struct {
 uint32 ticket_lifetime_hint;
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 opaque ticket<0..2^16-1>;
 
@@ -23429,8 +22944,6 @@ Wireshark 抓包了解 Chrome 和 Nginx 是如何处理的。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 8.9.1 Wireshark 的几个使用技巧
 
 Wireshark 功能非常强大，如果读者没有使用过 Wireshark 也没有关系，只要掌握几个
@@ -23523,8 +23036,6 @@ $ tcpdump -s 0 -i eth1 port 443 and host 10.235.173.30 -w https.pcap 简单解�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ port 443 and host 10.235.173.30：表示仅仅抓取 443 端口的流量，同时仅仅捕获特
 
 定 IP 的流量，这个 host 一般是某个客户端的 IP，该表达式可以过滤很多不关心
@@ -23610,8 +23121,6 @@ Wireshark 使用该文件中的主密钥解密 HTTPS 流量。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 从图 8-16 中可以看出客户端发送了 Client Hello 消息，服务器直接回应一条 Alert 消
 
@@ -23746,8 +23255,6 @@ Extensions Length: 405
 Extension: Reserved (GREASE) (len=0)
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 Extension: renegotiation_info (len=1)
 
@@ -23915,8 +23422,6 @@ ALPN string length: 8
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ALPN Next Protocol: http/1.1
 
 服务器以 Server Hello 消息进行回应，重点关注以下信息：
@@ -24075,8 +23580,6 @@ KeyPurposeId: 1.3.6.1.5.5.7.3.2 (id-kp-clientAuth)
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Extension (id-ce-basicConstraints)
 
 Extension Id: 2.5.29.19 (id-ce-basicConstraints)
@@ -24218,8 +23721,6 @@ Finished 消息的格式也非常简单，消息如下：
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 TLSv1.2 Record Layer: Handshake Protocol: Encrypted Handshake Message Content Type: Handshake (22)
 
@@ -24363,8 +23864,6 @@ Length: 144
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 EC Diffie-Hellman Server Params
 
 Curve Type: named_curve (0x03)
@@ -24499,8 +23998,6 @@ Version: TLS 1.2 (0x0303)
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 Random: fa4486bf0726a368396e77127665a154694650aefe65b190...
 
 Session ID Length: 32
@@ -24630,8 +24127,6 @@ Session Ticket 子消息的时候，客户端会将 Ticket 和对应的预备主
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 成主密钥，最终生成本次加密所需要的密钥块。
 
@@ -24773,8 +24268,6 @@ Line-based text data: text/html
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 <!DOCTYPE html>\n
 
 <html>\n
@@ -24850,8 +24343,6 @@ HTTPS 性能和安全
 文档学习 TLS/SSL 协议的人群来说，理解密码套件的各个的组成部分，也可以部署出安全
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 的 HTTPS 网站。
 
@@ -25001,8 +24492,6 @@ $ openssl ciphers -V 'ECDHE-ECDSA-AES256-GCM-SHA384' | column -t 0xC0,0x2C - ECD
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 （1）kRSA、aRSA、RSA
 
 这些密码套件使用 RSA 公钥进行身份校验（证书中包含的是 RSA 公钥）和密钥协商，
@@ -25122,8 +24611,6 @@ $ openssl ciphers -V 'kECDHE' | column -t
 0xC0,0x18 - AECDH-AES128-SHA TLSv1 Kx=ECDH Au=None Enc=AES(128) Mac=SHA1
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 （8）ECDHE、EECDH
 
@@ -25260,8 +24747,6 @@ $ openssl ciphers -V 'SRP' | column -t
 0xC0,0x22 - SRP-DSS-AES-256-CBC-SHA SSLv3 Kx=SRP Au=DSS Enc=AES(256) Mac=SHA1
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 0xC0,0x21 - SRP-RSA-AES-256-CBC-SHA SSLv3 Kx=SRP Au=RSA Enc=AES(256) Mac=SHA1
 
@@ -25415,8 +24900,6 @@ openssl ciphers -V '3DES' | column -t
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 3）摘要算法关键字
 
 在密码套件中，摘要算法理解起来相对简单一点。
@@ -25559,8 +25042,6 @@ $ openssl ciphers -V 'MEDIUM' | column -t
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 0x00,0x96 - SEED-SHA SSLv3 Kx=RSA Au=RSA Enc=SEED(128) Mac=SHA1
 
 查看 LOW 关键字对应的密码套件：
@@ -25688,8 +25169,6 @@ $ openssl ciphers -V 'DEFAULT:-AESGCM:AESGCM' | column -t
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 上面的示例输出最终包含 AESGCM 关键字对应的密码套件。
 
@@ -25864,8 +25343,6 @@ TLS_RSA_WITH_AES_128_CBC_SHA
 AES128-SHA
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -26113,8 +25590,6 @@ AES128-CCM8
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 续表
 
 IANA
@@ -26345,8 +25820,6 @@ HTTPS 网站
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 9.2.1 已知的安全漏洞
 
 学习密码学的手段除了学习密码学算法的原理、使用标准，还有另外一个方法，就是
@@ -26471,8 +25944,6 @@ FREAK 就是利用了出口密码套件的缺点，引发中间人攻击，攻�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 TIME、BREACH 攻击。
 
 2012 年产生了一个称为 CRIME 的攻击，主要是因为没有安全实现 TLS 压缩特性，从
@@ -26594,8 +26065,6 @@ TLS 1.0 以上的版本目前已经不存在降级攻击，因为 Finished 子�
 ◎ 服务器不支持 DHE 密码套件。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 服务器不支持 Session Ticket 会话恢复。
 
@@ -26720,8 +26189,6 @@ Web 服务器和 OpenSSL 库进行性能测试。
 题，服务器应该部署更安全的 TLS/SSL 协议版本。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 相对安全的 TLS/SSL 协议版本包含的密码套件也是相对安全的，服务器选择支持哪些
 
@@ -26878,8 +26345,6 @@ TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
 ECDHE-ECDSA-AES256-SHA
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -27061,8 +26526,6 @@ ECC 椭圆曲线密钥长度
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 表 9-14 不同 TLS/SSL 协议实现 ECC 兼容性
 
 TLS/SSL 协议库
@@ -27243,8 +26706,6 @@ DHE 和 ECDHE 密码套件实际上分别称为临时 DH 密码套件、临时 E
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 历史上确实存在 DH 密码套件和 ECDH 密码套件，它们是静态的密码协商算法，也就
 
 是服务器的 DH 参数和 DH 公钥都保存在证书中，都是固定的值，如果选择这两个密码套
@@ -27368,8 +26829,6 @@ CA 签发的证书仅仅是服务器实体证书，而在部署 HTTPS 网站的�
 DV 证书申请仅仅校验域名所有权就可以，如果域名被劫持，攻击者就会诱使 CA 机
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 构签发一张证书。而 OV 和 EV 证书一般会严格校验申请者身份，错误签发证书的概率比
 
@@ -27495,8 +26954,6 @@ HTTPS 网站最大的问题就是某些用户的客户端版本太旧，服务�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 证书（包括不同类型的证书，比如 SAN 证书、泛域名证书）主机名的校验，一
 
 般情况下通过证书 subject 字段的 CN 值或者证书 SAN 扩展的值校验主机名。
@@ -27620,8 +27077,6 @@ HTTPS 包含 TLS/SSL 协议和 HTTP，本章主要讲解的是 TLS/SSL 协议的
 ◎ 如果一个网站并没有提供 HTTP 服务，但仍然开放 80 端口服务。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 网站并没有为所有主机申请证书，或者证书包含的主机并不全。
 
@@ -27749,8 +27204,6 @@ HTTP 应用层的优化也适用于 HTTPS。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 尽量使用简短握手，减少网络延迟。
 
 ◎ 使用更快、更安全的密码学算法，必要的话可以使用硬件加速方案。
@@ -27870,8 +27323,6 @@ $ sysctl -w net.ipv4.tcp_window_scaling=1
 拥塞窗口就会根据算法加大数值，也就是发送的数据量是逐步增加的。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 拥塞窗口的这种处理机制称为慢启动，也就是传输的数据包数量是慢慢提升的。
 
@@ -28002,8 +27453,6 @@ JavaScript 执行在页面渲染时才进行，尽可能地让用户看到基础
 ◎ HTTP/1.1 是目前最常用的 HTTP 版本。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ HTTPS 由 HTTP/1.1 和 TLS/SSL 协议组成，可以看出 HTTP 和 HTTPS 应用层原
 
@@ -28137,8 +27586,6 @@ HTTP/1.1 的设计目标并没有重点关注性能，而 Web 发展到一定阶
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 影响，比如 HTTP 管道技术基于 HTTP/1.1 并没有可行性，而长连接技术给浏览器和服务
 
 器带来很大的负载。
@@ -28250,8 +27697,6 @@ TCP 连接，负载会大大减少，一个 TCP 连接就能处理主页面和�
 自己独有的流量控制策略，和 TCP 流量控制策略一样，都是为了更好地控制数
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 据传输。
 
@@ -28388,8 +27833,6 @@ Nginx HTTPS 详细安装和配置后续章节会重点讲解，目前读者只�
 HTTP/2 网站即可。如果读者使用的 Linux 发行版版本较高，可以直接使用包安装方式（比
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 如 YUM 或 APT-GET）安装 Nginx，默认都支持 ngx_http_v2_module 模块。
 
@@ -28567,8 +28010,6 @@ $ /usr/local/bincurl -V
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 curl 7.58.0 (x86_64-pc-linux-gnu) libcurl/7.56.0 OpenSSL/1.1.0g zlib/1.2.8
 
 nghttp2/1.31.0-DEV
@@ -28686,8 +28127,6 @@ TLS/SSL 协议中最重要的概念就是密码套件，密码套件是密码学
 延迟，这两个消息也会进行多个密码学运算，比如签名运算、密码协商运算，主要涉及公
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 开密钥算法的组合运算，后续会重点描述相关性能测试。
 
@@ -28818,8 +28257,6 @@ HTTPS 协议运算对客户端的影响相对较小。
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 手段帮助相对较小。
 
@@ -28952,8 +28389,6 @@ Cache，单台服务器消耗的内存就更多，是不小的负担。
 不是特别好，比如用户的 IP 可能会变化。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ CloudFlare 基 于 openresty 的 lua-resty-memcached 模 块 实现了 分 布 式 Session Cache。
 
@@ -29101,8 +28536,6 @@ Encrypt）就不包含证书链，只包含吊销状态和签名。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 7）证书优化
 
 在 TLS/SSL 握手子协议中，服务器会发送证书供服务器进行身份校验，在部署证书的
@@ -29224,8 +28657,6 @@ AES-GCM-128、ChaCha20-Poly1305，这三种算法针对不同的平台，性能�
 的平台和浏览器支持。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ChaCha20-Poly1305 算法兼容性如表 9-20 所示。
 
@@ -29358,8 +28789,6 @@ AES-CBC-256 略高，AES-GCM-128 性能比 AES-GCM-256 略高。
 对于服务器和客户端来说，该密码套件类似于 DHE_RSA 密码套件，但是有 ECC 的
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 支持，性能相对较高。
 
@@ -29545,8 +28974,6 @@ ECDHE-ECDSA（192）
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 9-4 英特尔官方测试密码套件性能比较图
@@ -29725,8 +29152,6 @@ ECDHE-ECDSA-CHACHA20-POLY1305:
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ECDHE-RSA-CHACHA20-POLY1305:
 
 ECDHE-ECDSA-AES128-GCM-SHA256:
@@ -29871,8 +29296,6 @@ ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:
 
 ECDHE-RSA-CHACHA20-POLY1305:
@@ -30013,8 +29436,6 @@ server {
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 listen 80 default_server;
 
 listen [::]:80 default_server;
@@ -30143,8 +29564,6 @@ ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; ssl_ecdh_curve X25519:P-256:P-384:P
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 RSA+AES128:
 
 ECDHE+AES256:
@@ -30262,8 +29681,6 @@ ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305' ; 然后�
 第一个测试，优先发送 ECDHE-RSA-AES128-GCM-SHA256 密码套件：
 
 $ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-AES128-
-
-深入浅出 HTTPS：从原理到实战
 
 GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305'
 
@@ -30392,8 +29809,6 @@ ssl_prefer_server_ciphers on;
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 ◎ 为了兼容 TLS v1，加密采用 3DES 算法，其他一些不安全的加密算法完全禁止。
 
@@ -30530,8 +29945,6 @@ Issuer
 http://cert.int-x3.letsencrypt.org）
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -30838,8 +30251,6 @@ TLS_RSA_WITH_AES_256_GCM_SHA384
 No
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -31241,8 +30652,6 @@ No
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 表 10-8 是否存在潜在的攻击
 
 攻击名称或者协议特性
@@ -31441,8 +30850,6 @@ Yes
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 续表
 
 协 议 版 本
@@ -31617,8 +31024,6 @@ TLS/SSL v1.3，那么网站支持该版本就不会显得那么紧迫。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ◎ 了解不同类型浏览器支持的密码套件及顺序，服务器可以调整密码套件列表的
 
 配置。
@@ -31732,8 +31137,6 @@ Server Test 测试工具的评分，A+、A、A-的评分被认为是安全的。
 ◎ 密码协商算法小于 1024 比特的密钥长度占比 5.4%，存在一定的安全风险，相比
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 半年前减少了 1%。
 
@@ -31854,8 +31257,6 @@ OpenSSL 目前是主流的 TLS/SSL 协议实现，大部分软件，比如各类
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 工具可以直接虚拟出一个 HTTPS 网站，不用实际部署 HTTPS 网站就能进行测试。
 
@@ -31993,8 +31394,6 @@ Verification: OK
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 上述输出可以表示握手成功。
 
 （5）握手的详细信息
@@ -32125,8 +31524,6 @@ $ openssl s_client -connect smtp.sina.net:25 -starttls smtp 该命令用于测�
 这些子参数很有用，比如为了测试服务器是否支持 SSL v3.0，可以输入以下命令：
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 $ openssl s_client -connect www.example.com:443 -ssl3
 
@@ -32260,8 +31657,6 @@ SSL_connect:SSLv3/TLS read finished
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 服务器实体证书和中间证书，从而构建中间证书、服务器实体证书。
 
 11）-servername name
@@ -32386,8 +31781,6 @@ s_server 工具也非常重要，可以生成一个支持 TLS/SSL 协议的服�
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 5）-dhparam filename
 
 -dhparam 对于理解 TLS/SSL 协议很有帮助，如果想使用临时 DH 算法进行密码协商，
@@ -32505,8 +31898,6 @@ $ openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365
 -nodes
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 接下来执行下列命令，启动一个 HTTPS 服务：
 
@@ -32671,8 +32062,6 @@ com/checker/
 Server Test 差不多
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 续表
 
@@ -32850,8 +32239,6 @@ $ ./rfc5077-client -s www.example.com 139.129.23.162
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 [√] Check arguments.
 
 [√] Solve 139.129.23.162:
@@ -32989,8 +32376,6 @@ Shell 操作，当然如果仅仅是安装 Nginx，操作并不复杂。
 过了测试并能成功运行。
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 那么如何才能部署一个相对完美的 HTTPS 网站呢？通过学习本章的前几节，读者掌
 
@@ -33148,8 +32533,6 @@ $ make clean
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 $ /usr/local/nginx1.13/sbin/nginx -t
 
 
@@ -33290,8 +32673,6 @@ RSA 公钥，另外一张证书包含 ECDSA 公钥。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 浏览器还不支持 ECC 曲线，那么有办法同时支持两张证书吗？
 
 Nginx 就能够支持双证书部署，至于客户端使用哪种证书，取决于客户端是否支持 ECC
@@ -33430,8 +32811,6 @@ http {
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
 ssl_certificate cert.pem;
@@ -33560,8 +32939,6 @@ ssl_session_timeout time;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 $ openssl rand 80 > ticket.key
 
 生成密钥文件后，可以进行如下配置：
@@ -33683,8 +33060,6 @@ ssl_stapling_responder http://ocsp.example.com;
 从 Nginx 1.11.0 版本开始，如果使用 DHE 密钥协商算法，必须指定 ssl_dhparam 参数，
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 如果不配置该参数，服务器无法提供 DHE 密码套件。
 
@@ -33815,8 +33190,6 @@ $ cd ct-submit-master
 $ go build
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 然后运行该工具，提交证书签发日志给两个 Certificate Logs 服务器：
 
@@ -34000,8 +33373,6 @@ access_log /var/log/www.example.com_ssl.log ssl ;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 10.4.2 使用 Nginx+BoringSSL 部署 HTTPS 网站
 
 如果读者觉得 OpenSSL 库并不适合，可以选择使用 Nginx+BoringSSL 部署 HTTPS 网
@@ -34152,8 +33523,6 @@ HTTPS 服务。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 本节的目的就是回答该问题，主要包含以下内容：
 
 ◎ 介绍 Web 网站中常见的设备和服务器，一个复杂的系统架构，有各种各样的设备
@@ -34302,8 +33671,6 @@ SSL 处理即可。
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 2）DNS + 四层设备 + 后端 Web 服务器
 
 对于大型网站来说，这是一种比较常见的部署方式，为了扩展 Web 的服务能力，四
@@ -34403,8 +33770,6 @@ CDN 服务商会花费很多的精力去提升 HTTPS 请求的性能，即使稍
 
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 本就会减少很多。
 
@@ -34572,8 +33937,6 @@ proxy_ssl_trusted_certificate
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 图 10-8 Flexible SSL
@@ -34689,8 +34052,6 @@ server {
 listen 443 ssl;
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 server_name www.example.com;
 
@@ -34827,8 +34188,6 @@ TLS/SSL 协议，速度相对较慢。
 适用于企业内部，后端 Web 服务器部署自签名证书，由于代理服务器也是由企业控
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 制，可以选择不校验后端 Web 服务器的证书，或者在代理服务器上在可信任根证书列表
 
@@ -34970,8 +34329,6 @@ ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
 
 
-深入浅出 HTTPS：从原理到实战
-
 
 
 # 使用 ssl-cert 工具生成的证书和密钥对
@@ -35083,8 +34440,6 @@ https://www.example.com，而为了使用 CDN 加速，必须将 www.example.com
 在这种结构下，代理服务器需要将证书发送给后端服务器，从后端服务器的角度看，
 
 
-
-深入浅出 HTTPS：从原理到实战
 
 代理服务器就是一个客户端，在本例中客户端证书由 Let’s Encrypt 签发，DST_ROOT.pem
 
