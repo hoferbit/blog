@@ -78,6 +78,8 @@
   
   
   
+  
+  
 
   
     {
@@ -157,6 +159,14 @@
       "category" : "history",
       
       "url"      : "http://localhost:4000/an-illustrated-history-of-programming/",
+      "keywords" : "history"
+    } ,
+  
+    {
+      "title"    : "深入浅出 HTTPS：从原理到实战",
+      "category" : "history",
+      
+      "url"      : "http://localhost:4000/a-https-book/",
       "keywords" : "history"
     } ,
   

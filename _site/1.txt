@@ -1,0 +1,6 @@
+Configuration file: /Users/hofer/SynologyDrive/code/blog/_config.yml
+            Source: /Users/hofer/SynologyDrive/code/blog
+       Destination: /Users/hofer/SynologyDrive/code/blog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
