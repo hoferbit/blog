@@ -171,6 +171,22 @@
     } ,
   
     {
+      "title"    : "计算机科学入门",
+      "category" : "cs",
+      
+      "url"      : "http://localhost:4000/cs101/",
+      "keywords" : "cs"
+    } ,
+  
+    {
+      "title"    : "6.824 Distributed Systems",
+      "category" : "cs",
+      
+      "url"      : "http://localhost:4000/mit6-824/",
+      "keywords" : "cs"
+    } ,
+  
+    {
       "title"    : "Wiki Template",
       "category" : "cate1",
       
