@@ -35,6 +35,3 @@ source ~/.zshrc 
 
 # References
 [https://github.com/xiaolai/apple-computer-literacy](https://github.com/xiaolai/apple-computer-literacy)  
-
-# brew
-brew install todo  
