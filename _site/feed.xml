@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-10T16:22:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">6.824 Distributed Systems</title><link href="http://localhost:4000/mit6-824/" rel="alternate" type="text/html" title="6.824 Distributed Systems" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>http://localhost:4000/mit6-824</id><content type="html" xml:base="http://localhost:4000/mit6-824/">&lt;p&gt;课程主页&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-11T17:02:00+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hofer’s Blog</title><subtitle>编程随想</subtitle><author><name>Hofer</name></author><entry><title type="html">6.824 Distributed Systems</title><link href="http://localhost:4000/mit6-824/" rel="alternate" type="text/html" title="6.824 Distributed Systems" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>http://localhost:4000/mit6-824</id><content type="html" xml:base="http://localhost:4000/mit6-824/">&lt;p&gt;课程主页&lt;br /&gt;
 &lt;a href=&quot;https://pdos.csail.mit.edu/6.824/index.html&quot;&gt;https://pdos.csail.mit.edu/6.824/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;csail&lt;br /&gt;
+&lt;a href=&quot;https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory&quot;&gt;https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/av87684880/&quot;&gt;https://www.bilibili.com/video/av87684880/&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="cs" /><summary type="html">课程主页 https://pdos.csail.mit.edu/6.824/index.html</summary></entry><entry><title type="html">计算机科学入门</title><link href="http://localhost:4000/cs101/" rel="alternate" type="text/html" title="计算机科学入门" /><published>2022-10-08T00:00:00+08:00</published><updated>2022-10-08T00:00:00+08:00</updated><id>http://localhost:4000/cs101</id><content type="html" xml:base="http://localhost:4000/cs101/">&lt;p&gt;&lt;a href=&quot;https://www.kawabangga.com/collection&quot;&gt;https://www.kawabangga.com/collection&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://teachyourselfcs.com/&quot;&gt;https://teachyourselfcs.com/&lt;/a&gt;&lt;br /&gt;
@@ -32953,20 +32956,33 @@ LXGW Wenkai Mono 18&lt;/p&gt;
 
 &lt;h2 id=&quot;whitespace&quot;&gt;whitespace&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Editor&lt;/code&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;General&lt;/code&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Appearance&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show whitespaces&lt;/code&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Preferences fonts Appearance &amp;amp; Behavior - Appearance - Use custom font LXGW Wenkai Mono 16</summary></entry><entry><title type="html">macOS Setup</title><link href="http://localhost:4000/macos-setup/" rel="alternate" type="text/html" title="macOS Setup" /><published>2022-08-05T00:00:00+08:00</published><updated>2022-08-05T00:00:00+08:00</updated><id>http://localhost:4000/macos-setup</id><content type="html" xml:base="http://localhost:4000/macos-setup/">&lt;h1 id=&quot;system-preferences&quot;&gt;System Preferences&lt;/h1&gt;
-&lt;p&gt;Dock&lt;br /&gt;
-在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System Preference &amp;gt; Dock &amp;amp; Menu Bar&lt;/code&gt; 里，把 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show recent applications in Dock&lt;/code&gt; 前面的勾去掉。&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults write com.apple.dock persistent-apps -array; killall Dock
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Show whitespaces&lt;/code&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Preferences fonts Appearance &amp;amp; Behavior - Appearance - Use custom font LXGW Wenkai Mono 16</summary></entry><entry><title type="html">macOS Setup</title><link href="http://localhost:4000/macos-setup/" rel="alternate" type="text/html" title="macOS Setup" /><published>2022-08-05T00:00:00+08:00</published><updated>2022-08-05T00:00:00+08:00</updated><id>http://localhost:4000/macos-setup</id><content type="html" xml:base="http://localhost:4000/macos-setup/">&lt;h1 id=&quot;apps&quot;&gt;Apps&lt;/h1&gt;
+&lt;p&gt;RunCat Magnet Insomniacs&lt;br /&gt;
+Xcode Visual Studio Code&lt;br /&gt;
+iTerm&lt;br /&gt;
+brew&lt;/p&gt;
 
-&lt;h1 id=&quot;apps&quot;&gt;Apps&lt;/h1&gt;
-&lt;p&gt;CleanMyMac&lt;/p&gt;
+&lt;h1 id=&quot;zsh-oh-my-zsh&quot;&gt;zsh oh-my-zsh&lt;/h1&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install oh-my-zsh&lt;/span&gt;
+sh &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# config oh-my-zsh&lt;/span&gt;
+vim ~/.zshrc &lt;span class=&quot;c&quot;&gt;# ZSH_THEME=&quot;bira&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_CUSTOM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;~/.oh-my-zsh/custom&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
+vim ~/.zshrc &lt;span class=&quot;c&quot;&gt;# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gitpull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git pull&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;git add . &amp;amp;&amp;amp; git commit -m 'build' &amp;amp;&amp;amp; git push
+source ~/.zshrc 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;fonts&quot;&gt;Fonts&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/lxgw/LxgwWenKai&quot;&gt;https://github.com/lxgw/LxgwWenKai&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/xiaolai/apple-computer-literacy&quot;&gt;https://github.com/xiaolai/apple-computer-literacy&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;brew&quot;&gt;brew&lt;/h1&gt;
-&lt;p&gt;brew install todo&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">System Preferences Dock 在 System Preference &amp;gt; Dock &amp;amp; Menu Bar 里，把 Show recent applications in Dock 前面的勾去掉。 defaults write com.apple.dock persistent-apps -array; killall Dock</summary></entry><entry><title type="html">Ubuntu Setup</title><link href="http://localhost:4000/ubuntu-setup/" rel="alternate" type="text/html" title="Ubuntu Setup" /><published>2022-08-04T00:00:00+08:00</published><updated>2022-08-04T00:00:00+08:00</updated><id>http://localhost:4000/ubuntu-setup</id><content type="html" xml:base="http://localhost:4000/ubuntu-setup/">&lt;h1 id=&quot;zsh-oh-my-zsh&quot;&gt;zsh oh-my-zsh&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/xiaolai/apple-computer-literacy&quot;&gt;https://github.com/xiaolai/apple-computer-literacy&lt;/a&gt;&lt;/p&gt;</content><author><name>Hofer</name></author><category term="Tool" /><summary type="html">Apps RunCat Magnet Insomniacs Xcode Visual Studio Code iTerm brew</summary></entry><entry><title type="html">Ubuntu Setup</title><link href="http://localhost:4000/ubuntu-setup/" rel="alternate" type="text/html" title="Ubuntu Setup" /><published>2022-08-04T00:00:00+08:00</published><updated>2022-08-04T00:00:00+08:00</updated><id>http://localhost:4000/ubuntu-setup</id><content type="html" xml:base="http://localhost:4000/ubuntu-setup/">&lt;h1 id=&quot;zsh-oh-my-zsh&quot;&gt;zsh oh-my-zsh&lt;/h1&gt;
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install zsh&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/shells
