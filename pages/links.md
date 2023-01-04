@@ -16,6 +16,7 @@ permalink: /links/
 [https://program-think.blogspot.com/](https://program-think.blogspot.com/)  
 [https://www.yinwang.org/](https://www.yinwang.org/)  
 [http://mindhacks.cn/](http://mindhacks.cn/)  
+[https://plantegg.github.io/](https://plantegg.github.io/)  
 二愣 [https://godruoyi.com/](https://godruoyi.com/)  
 [http://www.zhuangbiaowei.com/](http://www.zhuangbiaowei.com/)  
 [https://www.freemindworld.com/](https://www.freemindworld.com/)  
